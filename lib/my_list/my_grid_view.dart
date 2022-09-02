@@ -5,6 +5,8 @@ class MyGridView extends StatelessWidget {
   final bool isVertical;
   final double horizontalPadding;
   final double verticalPadding;
+  final double crossAxisSpacing;
+  final double mainAxisSpacing;
   final bool reverse;
   final ScrollPhysics physics;
   final bool shrinkWrap;
@@ -24,6 +26,8 @@ class MyGridView extends StatelessWidget {
     required this.physics,
     this.shrinkWrap = false,
     this.verticalPadding = 24,
+    this.crossAxisSpacing =5,
+    this.mainAxisSpacing =5,
     this.columnCount = 3,
     this.curve=Curves.decelerate,
     this.animationShowDuration=2,
@@ -35,6 +39,13 @@ class MyGridView extends StatelessWidget {
     return AnimationLimiter(
       child: GridView.count(
         physics: physics,
+        reverse: reverse,
+        primary: primary,
+        shrinkWrap: shrinkWrap,
+        clipBehavior:clipBehavior,
+        crossAxisSpacing: crossAxisSpacing,
+        mainAxisSpacing: mainAxisSpacing,
+        scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
         crossAxisCount: columnCount,
         children: List.generate(
           listOfData.length,
