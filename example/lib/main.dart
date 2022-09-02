@@ -1,4 +1,3 @@
-import 'package:example/imagepicker.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_library/ui_library.dart';
 
@@ -36,17 +35,6 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListVertical(
-      isVertical: false,
-      horizontalPadding: 32,
-      listOfData: List.generate(
-        10,
-        (index) => Container(
-          width: 100,
-          height: 40,
-          color: Colors.blue,
-        ),
-      ),
-    );
+    return SizedBox();
   }
 }
