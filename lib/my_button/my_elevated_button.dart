@@ -1,7 +1,6 @@
 part of ui_library;
 
-class MyElevatedButtonPage extends StatelessWidget {
-  MyElevatedButtonPage({this.key, this.onPressed, this.onLongPress,  this.onFocusChange, this.style, this.focusNode, this.child, this.duration, this.width, this.height, this.buttonBackgroundColor, this.shadowDegree}) : super(key: key);
+class MyElevatedButton extends StatelessWidget {
   final key;
   final onPressed;
   final onLongPress;
@@ -16,17 +15,29 @@ class MyElevatedButtonPage extends StatelessWidget {
   final duration;
   final width;
   final height;
+  const MyElevatedButton(
+      {this.key,
+      this.onPressed,
+      this.onLongPress,
+      this.onFocusChange,
+      this.style,
+      this.focusNode,
+      this.child,
+      this.duration,
+      this.width,
+      this.height,
+      this.buttonBackgroundColor,
+      this.shadowDegree})
+      : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
     return AnimatedButton(
-      child:child,
+      child: child,
       onPressed: onPressed,
       color: buttonBackgroundColor,
-      shadowDegree:shadowDegree ,
-
+      shadowDegree: shadowDegree,
     );
-
   }
 }
-

@@ -35,7 +35,7 @@ class MyListView extends StatelessWidget {
         clipBehavior:clipBehavior,
         scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
         separatorBuilder: (c, i) {
-          return isVertical ? Divider() : VerticalDivider();
+          return isVertical ? const Divider() : const VerticalDivider();
         },
         itemBuilder: (c, i) {
           return listOfData[i];

@@ -50,8 +50,6 @@ class MyFirebaseSignIn {
     if (result.status == LoginStatus.success) {
       final userData = await FacebookAuth.instance.getUserData();
       userDataStore = userData;
-    } else {
-      print(result.message);
     }
     final OAuthCredential facebookAuthCredential =
         FacebookAuthProvider.credential(result.accessToken!.token);
@@ -62,7 +60,6 @@ class MyFirebaseSignIn {
   static String? signIn(String? email, String? password) {
     if ((email != null && email.isNotEmpty) &&
         (password != null && password.isNotEmpty)) {
-      print("manish");
       AuthenticationHelper()
           .signIn(email: email, password: password)
           .then((result) {
@@ -73,7 +70,6 @@ class MyFirebaseSignIn {
         }
       });
     } else {
-      print("manawer");
       return "Please Enter Email or Password";
     }
   }
@@ -86,7 +82,7 @@ class MyFirebaseSignIn {
         if (result == null) {
           return "SignUP-SuccessFull";
         } else {
-          return "Error::${result}";
+          return "Error::$result";
         }
       });
     } else {
@@ -126,6 +122,5 @@ class AuthenticationHelper {
   //SIGN OUT METHOD
   Future signOut() async {
     await _auth.signOut();
-    print('signout');
   }
 }

@@ -1,5 +1,6 @@
 part of ui_library;
 
+// ignore: must_be_immutable
 class MyListTile extends StatelessWidget {
   bool expanded;
   String title;

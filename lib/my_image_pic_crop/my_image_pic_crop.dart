@@ -1,5 +1,6 @@
 part of ui_library;
 
+
 class MyImagePicker {
   static Future<File?> pickImage({
     bool pickImageFromGallery = false,

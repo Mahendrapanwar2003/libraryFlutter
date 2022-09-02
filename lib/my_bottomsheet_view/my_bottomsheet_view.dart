@@ -10,7 +10,7 @@ class MyBottomSheetView {
       Color backBarrierColor = Colors.transparent,
       bool dismissible = true,
       double elevationCard = 30,
-      Color SheetColor = Colors.white,
+      Color sheetColor = Colors.white,
       double sheetBorderColor = 0,
       double paddingSheet = 8}) {
     return showModalBottomSheet(
@@ -21,7 +21,7 @@ class MyBottomSheetView {
       isDismissible: dismissible,
       builder: (context) => Material(
         elevation: elevationCard,
-        color: SheetColor,
+        color: sheetColor,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(cornerRadius),
           topLeft: Radius.circular(cornerRadius),
@@ -33,7 +33,7 @@ class MyBottomSheetView {
               topLeft: Radius.circular(cornerRadius),
             ),
           ),
-          color: SheetColor,
+          color: sheetColor,
           child: Padding(
             padding: EdgeInsets.all(paddingSheet),
             child: widget,
