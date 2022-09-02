@@ -2,6 +2,7 @@ part of ui_library;
 
 
 class MyImagePicker {
+  String string="";
   static Future<File?> pickImage({
     bool pickImageFromGallery = false,
     bool wantCropper = false,
