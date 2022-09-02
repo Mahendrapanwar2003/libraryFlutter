@@ -15,11 +15,11 @@ class MyListView extends StatelessWidget {
     required this.listOfData,
     this.isVertical = true,
     this.primary = true,
-    this.horizontalPadding = 16,
+    this.horizontalPadding =2,
     this.reverse = false,
     required this.physics,
     this.shrinkWrap = false,
-    this.verticalPadding = 24,
+    this.verticalPadding = 2,
     this.clipBehavior = Clip.hardEdge,
   }) : super(key: key);
 
