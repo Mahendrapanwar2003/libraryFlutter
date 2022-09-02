@@ -9,15 +9,19 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:animated_button/animated_button.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
 part 'image_pic/image_pic.dart';
 
+part 'my_responsive_sizer/my_responsive_sizer.dart';
+
 part 'firebase/firebase.dart';
+
+part 'my_button/my_elevated_button.dart';
 
 part 'my_colors/my_colors.dart';
 
 part 'my_text_style/my_text_style.dart';
 
 part 'theme/my_themedata.dart';
-
-//Our changes
