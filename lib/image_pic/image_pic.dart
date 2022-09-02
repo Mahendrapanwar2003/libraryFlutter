@@ -11,7 +11,6 @@ class MyImagePicker {
         ? await ImagePicker().pickImage(source: ImageSource.gallery)
         : await ImagePicker().pickImage(source: ImageSource.camera);
     if (imagePicker != null) {
-      print("manish 1");
       if (wantCropper) {
         CroppedFile? cropImage = await ImageCropper().cropImage(
           sourcePath: imagePicker.path,
