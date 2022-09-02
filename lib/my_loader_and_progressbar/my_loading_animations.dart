@@ -2,13 +2,13 @@ part of ui_library;
 
 class MyLoadingAnimations {
   static Widget loadingCircle(
-      {double Size = 100,
-      int duration = 3,
+      {required double size,
+      int duration =3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
-      double borderSize = 5}) {
+      double? borderSize}) {
     return LoadingFlipping.circle(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -17,13 +17,13 @@ class MyLoadingAnimations {
   }
 
   static Widget loadingSquare(
-      {double Size = 100,
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingFlipping.square(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -32,13 +32,13 @@ class MyLoadingAnimations {
   }
 
   static Widget loadingCircleBox(
-      {double Size = 100,
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingBouncingGrid.circle(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -47,13 +47,13 @@ class MyLoadingAnimations {
   }
 
   static Widget loadingSquareBox(
-      {double Size = 100,
+      {required  double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingBouncingGrid.square(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -62,14 +62,14 @@ class MyLoadingAnimations {
   }
 
   // ignore: non_constant_identifier_names
-  static Widget LoadingBouncingLineSquare(
-      {double Size = 100,
+  static Widget loadingBouncingLineSquare(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingBouncingLine.square(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -78,14 +78,14 @@ class MyLoadingAnimations {
   }
 
   // ignore: non_constant_identifier_names
-  static Widget LoadingBouncingLineCircle(
-      {double Size = 100,
+  static Widget loadingBouncingLineCircle(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingBouncingLine.circle(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -93,14 +93,14 @@ class MyLoadingAnimations {
     );
   }
 
-  static Widget LoadingBumpingLineCircle(
-      {double Size = 100,
+  static Widget loadingBumpingLineCircle(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingBumpingLine.circle(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -108,14 +108,14 @@ class MyLoadingAnimations {
     );
   }
 
-  static Widget LoadingBumpingLineSquare(
-      {double Size = 100,
+  static Widget loadingBumpingLineSquare(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingBumpingLine.square(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -123,14 +123,14 @@ class MyLoadingAnimations {
     );
   }
 
-  static Widget LoadingFillingSquare(
-      {double Size = 100,
+  static Widget loadingFillingSquare(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingFilling.square(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -138,14 +138,14 @@ class MyLoadingAnimations {
     );
   }
 
-  static Widget LoadingDoubleFlippingSquare(
-      {double Size = 100,
+  static Widget loadingDoubleFlippingSquare(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingDoubleFlipping.square(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -153,14 +153,14 @@ class MyLoadingAnimations {
     );
   }
 
-  static Widget LoadingDoubleFlippingCircle(
-      {double Size = 100,
+  static Widget loadingDoubleFlippingCircle(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingDoubleFlipping.circle(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -168,14 +168,14 @@ class MyLoadingAnimations {
     );
   }
 
-  static Widget LoadingFadingLineSquare(
-      {double Size = 100,
+  static Widget loadingFadingLineSquare(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingFadingLine.square(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -183,14 +183,14 @@ class MyLoadingAnimations {
     );
   }
 
-  static Widget LoadingFadingLineCircle(
-      {double Size = 100,
+  static Widget loadingFadingLineCircle(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingFadingLine.circle(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -198,14 +198,14 @@ class MyLoadingAnimations {
     );
   }
 
-  static Widget LoadingJumpingLineSquare(
-      {double Size = 100,
+  static Widget loadingJumpingLineSquare(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingJumpingLine.square(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
@@ -213,14 +213,14 @@ class MyLoadingAnimations {
     );
   }
 
-  static Widget LoadingRotatingSquare(
-      {double Size = 100,
+  static Widget loadingRotatingSquare(
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double borderSize = 5}) {
     return LoadingRotating.square(
-      size: Size,
+      size: size,
       duration: Duration(seconds: duration),
       borderColor: borderColor,
       backgroundColor: backgroundColor,
