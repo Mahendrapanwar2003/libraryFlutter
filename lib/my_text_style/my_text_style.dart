@@ -1,200 +1,429 @@
 part of ui_library;
 
-abstract class MySelectedTextStyle {
-  //display text style
+class MyTextThemeStyle {
+  static TextStyle headline1(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 96,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w300,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get displayLarge;
+  static TextStyle headline2(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 60.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w300,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get displayMedium;
+  static TextStyle headline3(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 48,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get displaySmall;
+  static TextStyle headline4(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 34.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  //headline text style
+  static TextStyle headline5(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 24.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get headlineLarge;
+  static TextStyle headline6(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 20.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w500,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get headlineMedium;
+  static TextStyle subtitle1(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 16.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get headlineSmall;
+  static TextStyle subtitle2(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 14.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w500,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get headline1;
+  static TextStyle bodyText1(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 16.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get headline2;
+  static TextStyle bodyText2(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 14.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get headline3;
+  static TextStyle caption(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 14.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w500,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get headline4;
+  static TextStyle button(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 12.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get headline5;
+  static TextStyle overline(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 10.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get headline6;
+  static TextStyle displayLarge(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 57.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  //title text style
+  static TextStyle displayMedium(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 45.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get titleLarge;
+  static TextStyle displaySmall(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 36.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get titleMedium;
+  static TextStyle headlineLarge(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 32.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get titleSmall;
+  static TextStyle headlineMedium(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 28.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  //body text style
+  static TextStyle headlineSmall(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 24.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get bodyLarge;
+  static TextStyle labelLarge(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 14.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w500,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get bodyMedium;
+  static TextStyle labelMedium(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 12.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w500,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get bodySmall;
+  static TextStyle labelSmall(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 11.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w500,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get bodyText1;
+  static TextStyle titleLarge(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 22.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w600,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get bodyText2;
+  static TextStyle titleMedium(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 16.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w600,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  //label text style
+  static TextStyle titleSmall(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 14.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w600,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get labelLarge;
+  static TextStyle bodyLarge(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 16.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get labelMedium;
+  static TextStyle bodyMedium(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 14.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 
-  TextStyle get labelSmall;
-
-  //subtitle text style
-
-  TextStyle get subtitle1;
-
-  TextStyle get subtitle2;
-
-  //caption text style
-
-  TextStyle get caption;
-
-  //button text style
-
-  TextStyle get button;
-
-  //overline text style
-
-  TextStyle get overline;
+  static TextStyle bodySmall(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 12.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
 }
 
-class MyTextStyle extends MySelectedTextStyle {
-  //----------------------------------display text style----------------------------------
-  @override
-  // TODO: implement displayLarge
-  TextStyle get displayLarge => throw UnimplementedError();
-
-  @override
-  // TODO: implement displayMedium
-  TextStyle get displayMedium => throw UnimplementedError();
-
-  @override
-  // TODO: implement displaySmall
-  TextStyle get displaySmall => throw UnimplementedError();
-
-  //----------------------------------headline text style----------------------------------
-  @override
-  // TODO: implement headlineLarge
-  TextStyle get headlineLarge => throw UnimplementedError();
-
-  @override
-  // TODO: implement headlineMedium
-  TextStyle get headlineMedium => throw UnimplementedError();
-
-  @override
-  // TODO: implement headlineSmall
-  TextStyle get headlineSmall => throw UnimplementedError();
-
-  @override
-  // TODO: implement headline1
-  TextStyle get headline1 => throw UnimplementedError();
-
-  @override
-  // TODO: implement headline2
-  TextStyle get headline2 => throw UnimplementedError();
-
-  @override
-  // TODO: implement headline3
-  TextStyle get headline3 => throw UnimplementedError();
-
-  @override
-  // TODO: implement headline4
-  TextStyle get headline4 => throw UnimplementedError();
-
-  @override
-  // TODO: implement headline5
-  TextStyle get headline5 => throw UnimplementedError();
-
-  @override
-  // TODO: implement headline6
-  TextStyle get headline6 => throw UnimplementedError();
-
-  //----------------------------------title text style----------------------------------
-  @override
-  // TODO: implement titleLarge
-  TextStyle get titleLarge => throw UnimplementedError();
-
-  @override
-  // TODO: implement titleMedium
-  TextStyle get titleMedium => throw UnimplementedError();
-
-  @override
-  // TODO: implement titleSmall
-  TextStyle get titleSmall => throw UnimplementedError();
-
-  @override
-  //----------------------------------body text style----------------------------------
-  // TODO: implement bodyLarge
-  TextStyle get bodyLarge => throw UnimplementedError();
-
-  @override
-  // TODO: implement bodyMedium
-  TextStyle get bodyMedium => throw UnimplementedError();
-
-  @override
-  // TODO: implement bodySmall
-  TextStyle get bodySmall => throw UnimplementedError();
-
-  @override
-  // TODO: implement bodyText1
-  TextStyle get bodyText1 => throw UnimplementedError();
-
-  @override
-  // TODO: implement bodyText2
-  TextStyle get bodyText2 => throw UnimplementedError();
-
-  //----------------------------------label text style----------------------------------
-  @override
-  // TODO: implement labelLarge
-  TextStyle get labelLarge => throw UnimplementedError();
-
-  @override
-  // TODO: implement labelMedium
-  TextStyle get labelMedium => throw UnimplementedError();
-
-  @override
-  // TODO: implement labelSmall
-  TextStyle get labelSmall => throw UnimplementedError();
-
-  //----------------------------------subtitle text style----------------------------------
-  @override
-  // TODO: implement subtitle1
-  TextStyle get subtitle1 => throw UnimplementedError();
-
-  @override
-  // TODO: implement subtitle2
-  TextStyle get subtitle2 => throw UnimplementedError();
-
-  //----------------------------------caption text style----------------------------------
-  @override
-  // TODO: implement caption
-  TextStyle get caption => throw UnimplementedError();
-
-  //----------------------------------button text style----------------------------------
-  @override
-  // TODO: implement button
-  TextStyle get button => throw UnimplementedError();
-
-  //----------------------------------overline text style----------------------------------
-  @override
-  // TODO: implement overline
-  TextStyle get overline => throw UnimplementedError();
+class MyTextTheme {
+  String fontFamily="";
+  TextTheme get myTextTheme => TextTheme(
+        displayLarge: MyTextThemeStyle.displayLarge(
+          MyColors().primary,
+          fontFamily: fontFamily,
+        ),
+        displayMedium: MyTextThemeStyle.displayMedium(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        displaySmall: MyTextThemeStyle.displaySmall(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        headlineLarge: MyTextThemeStyle.headlineLarge(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        headlineMedium: MyTextThemeStyle.headlineMedium(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        headlineSmall: MyTextThemeStyle.headlineSmall(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        titleLarge: MyTextThemeStyle.titleLarge(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        titleMedium: MyTextThemeStyle.titleMedium(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        titleSmall: MyTextThemeStyle.titleSmall(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        labelLarge: MyTextThemeStyle.labelLarge(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        labelMedium: MyTextThemeStyle.labelMedium(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        labelSmall: MyTextThemeStyle.labelSmall(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        bodyLarge: MyTextThemeStyle.bodyLarge(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        bodyMedium: MyTextThemeStyle.bodyMedium(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        bodySmall: MyTextThemeStyle.bodySmall(
+          MyColors().secondaryVariant,
+          fontFamily: fontFamily,
+        ),
+        headline1: MyTextThemeStyle.headline1(
+          MyColors().primary,
+          fontFamily: fontFamily,
+        ),
+        headline2: MyTextThemeStyle.headline2(
+          MyColors().primary,
+          fontFamily: fontFamily,
+        ),
+        headline3: MyTextThemeStyle.headline3(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        headline4: MyTextThemeStyle.headline4(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        headline5: MyTextThemeStyle.headline5(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        headline6: MyTextThemeStyle.headline6(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        subtitle1: MyTextThemeStyle.subtitle1(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        subtitle2: MyTextThemeStyle.subtitle2(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        bodyText1: MyTextThemeStyle.bodyText1(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        bodyText2: MyTextThemeStyle.bodyText2(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        button: MyTextThemeStyle.button(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        caption: MyTextThemeStyle.caption(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+        overline: MyTextThemeStyle.overline(
+          MyColors().secondary,
+          fontFamily: fontFamily,
+        ),
+      );
 }
