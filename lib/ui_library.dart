@@ -3,6 +3,9 @@ library ui_library;
 export 'package:ui_library/ui_library.dart';
 
 import 'dart:io';
+import 'dart:math';
+import 'package:flutter/material.dart';
+import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -14,6 +17,9 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:loading_animations/loading_animations.dart';
 import 'package:lottie/lottie.dart';
+import 'package:switcher/core/switcher_size.dart';
+import 'package:switcher/switcher.dart';
+import 'package:switcher_button/switcher_button.dart';
 
 part 'my_list/my_list_view.dart';
 
@@ -40,3 +46,8 @@ part 'my_colors/my_colors.dart';
 part 'my_text_style/my_text_style.dart';
 
 part 'my_theme/my_themedata.dart';
+
+part 'my_animations/my_animated_toast.dart';
+
+part 'my_button/my_switch_button.dart';
+
