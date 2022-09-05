@@ -4,7 +4,7 @@ extension DeviceExt on num {
   //  *****************  Absolute length units *****************************************
   // https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
 
-  /// The respective value in centimeters
+  /// The respective value in centimeters --
   double get cm => this * 37.8;
 
   /// The respective value millimeters
