@@ -39,7 +39,7 @@ part of ui_library;
   Color get  dialogBackgroundColor =>const Color(0xff);
 
 
-  /* ---------------------------BottomAppBarColor / AppBarBackgroundColor / AppBarColor Colors Collection--------------------------*/
+  /* --------------------------  BottomAppBarColor / AppBarBackgroundColor / AppBarColor Colors Collection--------------------------*/
   Color get  bottomAppBarColor =>const Color(0xff);
 
   Color get appBarBackgroundColor =>const Color(0xff);
@@ -87,6 +87,14 @@ part of ui_library;
   Color get  shadowColor =>const Color(0xff);
 
   Color get  splashColor =>const Color(0xff);
+
+
+
+
+
+
+
+
  }
 
 
