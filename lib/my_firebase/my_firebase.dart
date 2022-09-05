@@ -57,6 +57,7 @@ class MyFirebaseSignIn {
     return userDataStore;
   }
 
+//TODO Manish
   static String? signIn(String? email, String? password) {
     if ((email != null && email.isNotEmpty) &&
         (password != null && password.isNotEmpty)) {
@@ -74,6 +75,7 @@ class MyFirebaseSignIn {
     }
   }
 
+//TODO Manish
   static String? signUp(String? email, String? password) {
     if (email != null && password != null) {
       AuthenticationHelper()

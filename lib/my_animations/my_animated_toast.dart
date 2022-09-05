@@ -8,7 +8,7 @@ class MyAnimatedToastStyled {
     );
   }
 
-  static normal2Toast(
+  static normalAnimationToast(
       {required BuildContext context,
       String toastString = '',
       StyledToastAnimation animation = StyledToastAnimation.scale}) {

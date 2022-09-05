@@ -1,8 +1,7 @@
 part of ui_library;
 
-
 class MySwitchButton {
-  static Switche1({
+  static switchButtonFirst({
     required bool value,
     required SwitcherSize size,
     required int switcherButtonRadius,
@@ -13,7 +12,7 @@ class MySwitchButton {
     required MaterialColor colorOn,
     required Null Function(bool state) onChanged,
   }) {
-    return Switche1(
+    return switchButtonFirst(
       value: false,
       size: SwitcherSize.large,
       switcherButtonRadius: 50,
@@ -26,15 +25,13 @@ class MySwitchButton {
     );
   }
 
-  static SwitcherButton2({
+  static switchButtonSecond({
     required bool value,
     required Null Function(dynamic value) onChange,
   }) {
-    return SwitcherButton2(
+    return switchButtonSecond(
       value: true,
-      onChange: (value) {
-        print(value);
-      },
+      onChange: (value) {},
     );
   }
 }

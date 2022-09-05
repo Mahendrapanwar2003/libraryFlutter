@@ -4,13 +4,13 @@ class MyThemeData {
   static ThemeData get themeData {
     return ThemeData(
         primaryColor: MyColors().primary,
-        backgroundColor:MyColors().primary ,
+        backgroundColor: MyColors().primary,
         indicatorColor: MyColors().indicatorColor,
-           appBarTheme: AppBarTheme(
-           color: MyColors().primary,
-           backgroundColor: MyColors().onPrimary,
-           ),
-          colorScheme: ColorScheme(
+        appBarTheme: AppBarTheme(
+          color: MyColors().primary,
+          backgroundColor: MyColors().onPrimary,
+        ),
+        colorScheme: ColorScheme(
           onPrimary: MyColors().primary,
           primary: MyColors().onPrimary,
           secondary: MyColors().secondary,

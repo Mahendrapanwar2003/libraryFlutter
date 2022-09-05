@@ -17,34 +17,33 @@ class _ImageViState extends State<ImageVi> {
   Widget build(BuildContext context) {
     print("path:-1${widget.path?.path}");
     return Container(
-        height: 100,
-        width: 100,
-        decoration: BoxDecoration(
-            color: Colors.red,
-            image: DecorationImage(
-              image: (widget.path != null
-                      ? FileImage(widget.path!)
-                      : const NetworkImage(
-                          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"))
-                  as ImageProvider,
-            )),
-        child: Column(
-          children: [
-            ElevatedButton(
-              child: const Text("pickImage"),
-              onPressed: () async {
-                File? file = await MyImagePicker.pickImage(context: context);
+      height: 100,
+      width: 100,
+      decoration: BoxDecoration(
+          color: Colors.red,
+          image: DecorationImage(
+            image: (widget.path != null
+                    ? FileImage(widget.path!)
+                    : const NetworkImage(
+                        "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"))
+                as ImageProvider,
+          )),
+      child: Column(
+        children: [
+          ElevatedButton(
+            child: const Text("pickImage"),
+            onPressed: () async {
+              File? file = await MyImagePicker.pickImage(context: context);
 
-                setState(
-                  () async {
-                    if (widget.path != null) widget.path = file;
-                    print("widget.path:-4${widget.path?.path}");
-                    print("widget.path:-4${file?.path}");
-                  },
-                );
-              },
-            ),
-          ],
-        ));
+              setState(
+                () async {
+                  if (widget.path != null) widget.path = file;
+                },
+              );
+            },
+          ),
+        ],
+      ),
+    );
   }
 }

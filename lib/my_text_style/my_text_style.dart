@@ -311,7 +311,8 @@ class MyTextThemeStyle {
 }
 
 class MyTextTheme {
-  String fontFamily="";
+  String fontFamily = "";
+
   TextTheme get myTextTheme => TextTheme(
         displayLarge: MyTextThemeStyle.displayLarge(
           MyColors().primary,

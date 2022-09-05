@@ -10,12 +10,13 @@ class MyListView extends StatelessWidget {
   final bool shrinkWrap;
   final bool primary;
   final Clip clipBehavior;
+
   const MyListView({
     Key? key,
     required this.listOfData,
     this.isVertical = true,
     this.primary = true,
-    this.horizontalPadding =2,
+    this.horizontalPadding = 2,
     this.reverse = false,
     required this.physics,
     this.shrinkWrap = false,
@@ -26,13 +27,14 @@ class MyListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: horizontalPadding,vertical: verticalPadding),
+      padding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding, vertical: verticalPadding),
       child: ListView.separated(
         reverse: reverse,
         physics: physics,
         primary: primary,
         shrinkWrap: shrinkWrap,
-        clipBehavior:clipBehavior,
+        clipBehavior: clipBehavior,
         scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
         separatorBuilder: (c, i) {
           return isVertical ? const Divider() : const VerticalDivider();

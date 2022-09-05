@@ -3,7 +3,7 @@ part of ui_library;
 class MyLoadingAnimations {
   static Widget loadingCircle(
       {required double size,
-      int duration =3,
+      int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
       double? borderSize}) {
@@ -47,7 +47,7 @@ class MyLoadingAnimations {
   }
 
   static Widget loadingSquareBox(
-      {required  double size,
+      {required double size,
       int duration = 3,
       Color borderColor = Colors.cyan,
       Color backgroundColor = Colors.transparent,
