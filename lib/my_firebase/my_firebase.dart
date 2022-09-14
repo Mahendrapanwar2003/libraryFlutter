@@ -35,7 +35,6 @@ class MyFirebaseSignIn {
       } catch (e) {
         // handle the error here
       }
-
       return userData;
     } else {
       return {};
@@ -95,9 +94,7 @@ class MyFirebaseSignIn {
 
 class AuthenticationHelper {
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
   get user => _auth.currentUser;
-
   //SIGN UP METHOD
   Future signUp({required String email, required String password}) async {
     try {
@@ -110,7 +107,6 @@ class AuthenticationHelper {
       return e.message;
     }
   }
-
   //SIGN IN METHOD
   Future signIn({required String email, required String password}) async {
     try {
@@ -120,7 +116,6 @@ class AuthenticationHelper {
       return e.message;
     }
   }
-
   //SIGN OUT METHOD
   Future signOut() async {
     await _auth.signOut();

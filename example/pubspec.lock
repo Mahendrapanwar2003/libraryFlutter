@@ -173,7 +173,7 @@ packages:
     source: hosted
     version: "1.1.1"
   flutter_styled_toast:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_styled_toast
       url: "https://pub.dartlang.org"
@@ -189,6 +189,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  glass:
+    dependency: transitive
+    description:
+      name: glass
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1+1"
+  glassmorphism:
+    dependency: transitive
+    description:
+      name: glassmorphism
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.0"
   google_sign_in:
     dependency: transitive
     description:

@@ -314,68 +314,9 @@ class MyTextTheme {
   String fontFamily = "";
 
   TextTheme get myTextTheme => TextTheme(
-        displayLarge: MyTextThemeStyle.displayLarge(
-          MyColors().primary,
-          fontFamily: fontFamily,
-        ),
-        displayMedium: MyTextThemeStyle.displayMedium(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        displaySmall: MyTextThemeStyle.displaySmall(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        headlineLarge: MyTextThemeStyle.headlineLarge(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        headlineMedium: MyTextThemeStyle.headlineMedium(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        headlineSmall: MyTextThemeStyle.headlineSmall(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        titleLarge: MyTextThemeStyle.titleLarge(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        titleMedium: MyTextThemeStyle.titleMedium(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        titleSmall: MyTextThemeStyle.titleSmall(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        labelLarge: MyTextThemeStyle.labelLarge(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        labelMedium: MyTextThemeStyle.labelMedium(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        labelSmall: MyTextThemeStyle.labelSmall(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        bodyLarge: MyTextThemeStyle.bodyLarge(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        bodyMedium: MyTextThemeStyle.bodyMedium(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
-        bodySmall: MyTextThemeStyle.bodySmall(
-          MyColors().secondaryVariant,
-          fontFamily: fontFamily,
-        ),
+
         headline1: MyTextThemeStyle.headline1(
-          MyColors().primary,
+          Colors.green,
           fontFamily: fontFamily,
         ),
         headline2: MyTextThemeStyle.headline2(

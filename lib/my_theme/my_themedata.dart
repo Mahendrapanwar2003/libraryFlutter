@@ -6,9 +6,8 @@ class MyThemeData {
         primaryColor: MyColors().primary,
         backgroundColor: MyColors().primary,
         indicatorColor: MyColors().indicatorColor,
-        appBarTheme: AppBarTheme(
-          color: MyColors().primary,
-          backgroundColor: MyColors().onPrimary,
+        appBarTheme: const AppBarTheme(
+          color: Colors.red,
         ),
         colorScheme: ColorScheme(
           onPrimary: MyColors().primary,
