@@ -53,5 +53,3 @@ part 'my_theme/my_themedata.dart';
 part 'my_animations/my_animated_toast.dart';
 
 part 'my_button/my_switch_button.dart';
-
-part 'my_glass/my_glass.dart';
