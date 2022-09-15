@@ -25,7 +25,7 @@ class MyTextThemeStyle {
 
   static TextStyle headline3(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 48,
+      fontSize: 48.px,
       fontFamily: fontFamily,
       fontWeight: FontWeight.w400,
       inherit: true,
@@ -315,7 +315,7 @@ class MyTextTheme {
 
   TextTheme get myTextTheme => TextTheme(
 
-        headline1: MyTextThemeStyle.headline1(
+       /* headline1: MyTextThemeStyle.headline1(
           Colors.green,
           fontFamily: fontFamily,
         ),
@@ -330,12 +330,12 @@ class MyTextTheme {
         headline4: MyTextThemeStyle.headline4(
           MyColors().secondary,
           fontFamily: fontFamily,
-        ),
+        ),*/
         headline5: MyTextThemeStyle.headline5(
-          MyColors().secondary,
+          MyColors().text,
           fontFamily: fontFamily,
         ),
-        headline6: MyTextThemeStyle.headline6(
+       /* headline6: MyTextThemeStyle.headline6(
           MyColors().secondary,
           fontFamily: fontFamily,
         ),
@@ -358,14 +358,14 @@ class MyTextTheme {
         button: MyTextThemeStyle.button(
           MyColors().secondary,
           fontFamily: fontFamily,
-        ),
+        ),*/
         caption: MyTextThemeStyle.caption(
-          MyColors().secondary,
+          MyColors().caption,
           fontFamily: fontFamily,
-        ),
+        ),/*
         overline: MyTextThemeStyle.overline(
           MyColors().secondary,
           fontFamily: fontFamily,
-        ),
+        ),*/
       );
 }
