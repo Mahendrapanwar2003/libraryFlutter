@@ -1,36 +1,41 @@
 part of ui_library;
 
-class MyElevatedButton extends StatelessWidget {
-  //TODO aman is working
-  final key;
-  final onPressed;
-  final buttonBackgroundColor;
-  final autofocus = false;
-  final clipBehavior = Clip.none;
-  final child;
-  final shadowDegree;
-  int? duration;
-  double? width;
-  double? height;
+class MyElevatedButton {
+  static Elevated_Button_Theme(
+      {Key? key,
+      required VoidCallback? onPressed,
+      VoidCallback? onLongPress,
+      ValueChanged<bool>? onHover,
+      ValueChanged<bool>? onFocusChange,
+      ButtonStyle? style,
+      FocusNode? focusNode,
+      bool autofocus = false,
+      Clip clipBehavior = Clip.none,
+      MaterialStatesController? statesController,
+      required Widget? child}) {
+    return Elevated_Button_Theme(
+        onPressed: onPressed,
+        child: child,
+        style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30)),primary: MyColors().primary));
+  }
+}
 
-  MyElevatedButton(
-      {this.key,
-      this.onPressed,
-      this.duration,
-      this.width,
-      this.height,
-      this.buttonBackgroundColor,
-      this.shadowDegree,
-      this.child})
-      : super(key: key);
+/*class MyElevatedButton extends StatelessWidget {
+  const MyElevatedButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedButton(
-      child: child,
-      onPressed: onPressed,
-      color: buttonBackgroundColor,
-      shadowDegree: shadowDegree,
+    return Scaffold(
+      body: ElevatedButton(
+        onPressed: () {},
+        child: Row(
+          children: [
+            Text("")
+          ],
+        ),
+      ),
     );
   }
-}
+}*/

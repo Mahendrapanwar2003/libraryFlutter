@@ -16,7 +16,6 @@ dependencies:
   firebase_core: 1.20.0
   firebase_auth: 3.6.2
   responsive_sizer: ^3.1.0
-  animated_button: ^0.2.0
   modal_bottom_sheet: ^2.1.0
   loading_animations: ^2.1.0
   flutter_staggered_animations: ^1.1.1
