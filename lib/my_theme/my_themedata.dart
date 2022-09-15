@@ -31,7 +31,8 @@ class MyThemeData {
           )
         ),
         backgroundColor: MyColors().backGround,
-      textTheme: MyTextTheme().myTextTheme
+      textTheme: MyTextTheme().myTextTheme,
+      textSelectionTheme: TextSelectionThemeData(cursorColor: MyColors().primary)
         );
   }
 }
