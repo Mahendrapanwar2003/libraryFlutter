@@ -4,11 +4,11 @@ class MyColors {
   /* --------------------------Primary Colors Collection--------------------------*/
   Color get primaryColor => const Color(0xff);
 
-  Color get primary => const Color(0xff);
+  Color get primary => const Color(0xff4993E3);
 
   Color get primaryContainer => const Color(0xff);
 
-  Color get onPrimary => const Color(0xff);
+  Color get onPrimary => const Color(0xff91C9EE);
 
   Color get onPrimaryContainer => const Color(0xff);
 
@@ -17,7 +17,7 @@ class MyColors {
   Color get inversePrimary => const Color(0xff);
 
   /* --------------------------Secondary Colors Collection--------------------------*/
-  Color get secondary => const Color(0xff);
+  Color get secondary => const Color(0xff9B8CDF);
 
   Color get secondaryContainer => const Color(0xff);
 
@@ -41,7 +41,7 @@ class MyColors {
   /* --------------------------Background / ScaffoldBackgroundColor / DialogBackgroundColor Colors Collection--------------------------*/
   Color get backgroundColor => const Color(0xff);
 
-  Color get backGround => const Color(0xff);
+  Color get backGround => const Color(0xffEDF2FE);
 
   Color get onBackGround => const Color(0xff);
 
@@ -59,7 +59,7 @@ class MyColors {
   /* --------------------------Error / DisabledColor/ IndicatorColor Colors Collection--------------------------*/
   Color get errorColor => const Color(0xff);
 
-  Color get error => const Color(0xff);
+  Color get error => const Color(0xffFF7575);
 
   Color get onError => const Color(0xff);
 
@@ -70,6 +70,13 @@ class MyColors {
   Color get disabledColor => const Color(0xff);
 
   Color get indicatorColor => const Color(0xff);
+
+
+  /* --------------------------Success Colors Collection--------------------------*/
+
+  Color get success => const Color(0xff05D262);
+
+  Color get onSuccess => const Color(0xff);
 
   /* --------------------------Surface Colors Collection--------------------------*/
   Color get surface => const Color(0xff);
@@ -103,4 +110,13 @@ class MyColors {
   Color get shadowColor => const Color(0xff);
 
   Color get splashColor => const Color(0xff);
+
+
+  /* --------------------------Text Colors Collection--------------------------*/
+
+  Color get text => const Color(0xff525252);
+
+  Color get onText => const Color(0xffC1C1C1);
+
+  Color get caption => const Color(0xff808080);
 }

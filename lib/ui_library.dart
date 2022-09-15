@@ -15,10 +15,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:loading_animations/loading_animations.dart';
 import 'package:lottie/lottie.dart';
 import 'package:switcher/core/switcher_size.dart';
-
-
 part 'my_list/my_list_view.dart';
-
 part 'my_list/my_grid_view.dart';
 
 part 'my_animations/my_annimations.dart';
