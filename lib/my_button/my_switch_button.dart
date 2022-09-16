@@ -2,15 +2,15 @@ part of ui_library;
 
 class MySwitchButton {
   static switchButtonFirst({
-    required bool value,
-    required SwitcherSize size,
-    required int switcherButtonRadius,
-    required bool enabledSwitcherButtonRotate,
-    required IconData iconOff,
-    required IconData iconOn,
-    required Color colorOff,
-    required MaterialColor colorOn,
-    required Null Function(bool state) onChanged,
+     bool? value,
+     SwitcherSize? size,
+     int? switcherButtonRadius,
+    bool? enabledSwitcherButtonRotate,
+    IconData? iconOff,
+    IconData? iconOn,
+    Color? colorOff,
+    MaterialColor? colorOn,
+    Null Function(bool state)? onChanged,
   }) {
     return switchButtonFirst(
       value: false,
