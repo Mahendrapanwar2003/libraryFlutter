@@ -15,20 +15,22 @@ class MyGridView extends StatelessWidget {
   final int columnCount;
   final int animationShowDuration;
   final Curve curve;
+  final double radiusMaterial;
 
   const MyGridView({
     Key? key,
     required this.listOfData,
     this.isVertical = true,
     this.primary = true,
-    this.horizontalPadding = 16,
+    this.horizontalPadding = 2,
     this.reverse = false,
     required this.physics,
     this.shrinkWrap = false,
-    this.verticalPadding = 24,
+    this.verticalPadding = 2,
     this.crossAxisSpacing = 5,
     this.mainAxisSpacing = 5,
-    this.columnCount = 3,
+    this.columnCount = 2,
+    this.radiusMaterial = 10,
     this.curve = Curves.decelerate,
     this.animationShowDuration = 2,
     this.clipBehavior = Clip.hardEdge,
@@ -57,14 +59,13 @@ class MyGridView extends StatelessWidget {
               child: ScaleAnimation(
                 curve: curve,
                 child: FadeInAnimation(
-                  child: Material(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: horizontalPadding,
-                          vertical: verticalPadding),
-                      child: Card(
-                        child: listOfData[index],
-                      ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: horizontalPadding,
+                        vertical: verticalPadding),
+                    child: Material(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radiusMaterial)),
+                      child: listOfData[index],
                     ),
                   ),
                 ),

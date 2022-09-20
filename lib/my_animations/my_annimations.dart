@@ -2,8 +2,8 @@ part of ui_library;
 
 // ignore: must_be_immutable
 class MyAnimations extends StatelessWidget {
-  String pathJson;
   String pathNetwork;
+  String pathJson;
 
   MyAnimations({
     Key? key,
@@ -13,8 +13,6 @@ class MyAnimations extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return pathNetwork != ''
-        ? Lottie.network(pathNetwork)
-        : Lottie.asset(pathJson);
+    return pathNetwork != '' ? Lottie.network(pathNetwork) : Lottie.asset(pathJson);
   }
 }
