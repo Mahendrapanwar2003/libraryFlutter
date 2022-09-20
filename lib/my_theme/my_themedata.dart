@@ -1,16 +1,18 @@
 part of ui_library;
 
 class MyThemeData {
-  static ThemeData themeData({required Orientation? orientation}) {
+  static ThemeData  themeData({required Orientation? orientation}) {
     return ThemeData(
       primaryColor: MyColors().primary,
       backgroundColor: MyColors().backGround,
       textTheme: MyTextTheme().myTextTheme,
       textSelectionTheme:
-          TextSelectionThemeData(cursorColor: MyColors().primary),
+      TextSelectionThemeData(cursorColor: MyColors().primary),
       inputDecorationTheme: InputDecorationTheme(
-        contentPadding: const EdgeInsets.only(top: 2),
-        constraints: BoxConstraints(maxHeight: 40.px),
+        contentPadding: const EdgeInsets.only(top: 4),
+        constraints: BoxConstraints(
+            maxHeight: 70.px
+        ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(width: 2, color: MyColors().onPrimary),
         ),
@@ -39,14 +41,17 @@ class MyThemeData {
                 borderRadius: BorderRadius.circular(7.px),
               ),
               padding: EdgeInsets.zero,
-              foregroundColor: MyColors().primary)),
+              foregroundColor:MyColors().primary
+
+          )),
       outlinedButtonTheme: OutlinedButtonThemeData(
-          style: OutlinedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-              side: BorderSide(width: 2, color: MyColors().onPrimary),
-              minimumSize: Size(40.w, 40.px))),
+        style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25.px),
+            ),maximumSize: Size(35.w, 50.px),
+            side: BorderSide(color: MyColors().caption,width: 1.0),
+            padding: EdgeInsets.all(3.5.px)
+        ), ),
     );
   }
 }
