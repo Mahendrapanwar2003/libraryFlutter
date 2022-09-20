@@ -71,7 +71,8 @@ class MyTextThemeStyle {
     return TextStyle(
       fontSize: 16.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w400,
+     // fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -124,9 +125,10 @@ class MyTextThemeStyle {
 
   static TextStyle button(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 12.px,
+//      fontSize: 12.px,
+      fontSize: 18.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -181,7 +183,8 @@ class MyTextThemeStyle {
     return TextStyle(
       fontSize: 32.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
+     // fontWeight: FontWeight.w400,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -247,7 +250,8 @@ class MyTextThemeStyle {
     return TextStyle(
       fontSize: 22.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w600,
+    //  fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w400,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -315,14 +319,15 @@ class MyTextTheme {
 
   TextTheme get myTextTheme => TextTheme(
 
-       /* headline1: MyTextThemeStyle.headline1(
-          Colors.green,
+       headline1: MyTextThemeStyle.headlineLarge(
+          MyColors().text,
           fontFamily: fontFamily,
         ),
-        headline2: MyTextThemeStyle.headline2(
-          MyColors().primary,
+        headline2: MyTextThemeStyle.titleLarge(
+          MyColors().text,
           fontFamily: fontFamily,
         ),
+        /*
         headline3: MyTextThemeStyle.headline3(
           MyColors().secondary,
           fontFamily: fontFamily,
@@ -335,30 +340,30 @@ class MyTextTheme {
           MyColors().text,
           fontFamily: fontFamily,
         ),
-       /* headline6: MyTextThemeStyle.headline6(
-          MyColors().secondary,
+    /* headline6: MyTextThemeStyle.headline6(
+          MyColors().text,
           fontFamily: fontFamily,
-        ),
+        ),*/
         subtitle1: MyTextThemeStyle.subtitle1(
-          MyColors().secondary,
+          MyColors().caption,
           fontFamily: fontFamily,
         ),
         subtitle2: MyTextThemeStyle.subtitle2(
-          MyColors().secondary,
+          MyColors().primary,
           fontFamily: fontFamily,
         ),
         bodyText1: MyTextThemeStyle.bodyText1(
-          MyColors().secondary,
+          MyColors().text,
           fontFamily: fontFamily,
         ),
         bodyText2: MyTextThemeStyle.bodyText2(
-          MyColors().secondary,
+          MyColors().text,
           fontFamily: fontFamily,
         ),
-        button: MyTextThemeStyle.button(
-          MyColors().secondary,
+        button:MyTextThemeStyle.button(
+          MyColors().button,
           fontFamily: fontFamily,
-        ),*/
+        ),
         caption: MyTextThemeStyle.caption(
           MyColors().caption,
           fontFamily: fontFamily,
