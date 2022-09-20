@@ -47,6 +47,4 @@ part 'my_animations/my_animated_toast.dart';
 
 part 'my_button/my_switch_button.dart';
 
-part 'my_curves/my_curves.dart';
-
 part 'my_curves/header_widget.dart';

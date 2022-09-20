@@ -9,9 +9,9 @@ class MyThemeData {
       textSelectionTheme:
       TextSelectionThemeData(cursorColor: MyColors().primary),
       inputDecorationTheme: InputDecorationTheme(
-        contentPadding: const EdgeInsets.only(top: 2),
+        contentPadding: const EdgeInsets.only(top: 4),
         constraints: BoxConstraints(
-          maxHeight: 40.px
+          maxHeight: 70.px
         ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(width: 2, color: MyColors().onPrimary),
@@ -47,11 +47,11 @@ class MyThemeData {
       outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-
-              side: BorderSide(width: 2, color: MyColors().onPrimary),
-              minimumSize: Size(40.w, 40.px))),
+                borderRadius: BorderRadius.circular(25.px),
+                  ),maximumSize: Size(35.w, 50.px),
+              side: BorderSide(color: MyColors().caption,width: 1.0),
+              padding: EdgeInsets.all(3.5.px)
+              ), ),
     );
   }
 }

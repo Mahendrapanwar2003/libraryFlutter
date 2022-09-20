@@ -18,20 +18,20 @@ class HeaderWidget extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    MyColors().primary.withOpacity(0.2.px),
-                    MyColors().primary.withOpacity(0.2.px),
+                    MyColors().primary.withOpacity(0.2),
+                    MyColors().primary.withOpacity(0.2),
                   ],
-                  begin:  FractionalOffset(0.0.px, 0.0.px),
-                  end:  FractionalOffset(1.0.px, 0.0.px),
-                  stops: [0.0.px, 1.0.px],
+                  begin:  FractionalOffset(0.0, 0.0),
+                  end:  FractionalOffset(1.0, 0.0),
+                  stops: [0.0, 1.0],
                   tileMode: TileMode.clamp),
             ),
           ),
           clipper: ShapeClipper([
-            Offset(width / 5.px, height),
-            Offset(width / 10.px * 5.px, height - 60.px),
-            Offset(width / 5.px * 4.px, height + 20.px),
-            Offset(width, height - 18.px)
+            Offset(width / 5, height),
+            Offset(width / 10 * 5, height - 60),
+            Offset(width / 5 * 4, height + 20),
+            Offset(width, height - 18)
           ]),
         ),
         ClipPath(
@@ -39,20 +39,20 @@ class HeaderWidget extends StatelessWidget {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    MyColors().primary.withOpacity(0.2.px),
-                    MyColors().primary.withOpacity(0.2.px),
+                    MyColors().primary.withOpacity(0.2),
+                    MyColors().primary.withOpacity(0.2),
                   ],
-                  begin:  FractionalOffset(0.0.px, 0.0.px),
-                  end:  FractionalOffset(1.0.px, 0.0.px),
-                  stops: [0.0.px, 1.0.px],
+                  begin:  FractionalOffset(0.0, 0.0),
+                  end:  FractionalOffset(1.0, 0.0),
+                  stops: [0.0, 1.0],
                   tileMode: TileMode.clamp),
             ),
           ),
           clipper: ShapeClipper([
-            Offset(width / 3.px, height + 20.px),
-            Offset(width / 10.px * 8.px, height - 60.px),
-            Offset(width / 5.px * 4.px, height - 60.px),
-            Offset(width, height - 20.px)
+            Offset(width / 3, height + 20),
+            Offset(width / 10 * 8, height - 60),
+            Offset(width / 5 * 4, height - 60),
+            Offset(width, height - 20)
           ]),
         ),
       ],
@@ -69,7 +69,7 @@ class ShapeClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     var path = Path();
 
-    path.lineTo(0.0.px, size.height - 20.px);
+    path.lineTo(0.0, size.height - 20);
 
     // path.quadraticBezierTo(size.width/5, size.height, size.width/2, size.height-40);
     // path.quadraticBezierTo(size.width/5*4, size.height-80, size.width, size.height-20);
