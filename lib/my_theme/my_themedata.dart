@@ -3,8 +3,6 @@ part of ui_library;
 class MyThemeData {
   static ThemeData  themeData({required Orientation? orientation}) {
     return ThemeData(
-      primaryColor: MyColors().primary,
-      backgroundColor: MyColors().backGround,
       textTheme: MyTextTheme().myTextTheme,
       textSelectionTheme:
       TextSelectionThemeData(cursorColor: MyColors().primary),
