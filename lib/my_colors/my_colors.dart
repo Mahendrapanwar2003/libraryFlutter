@@ -118,12 +118,15 @@ class MyColors {
 
   Color get onText => const Color(0xffC1C1C1);
 
+  Color get textField => const Color(0xff000000);
+
   Color get caption => const Color(0xff808080);
 
 
-  /* --------------------------Text Colors Collection--------------------------*/
+  /* --------------------------Button Colors Collection--------------------------*/
 
   Color get button => const Color(0xffffffff);
+
 
 
 }
