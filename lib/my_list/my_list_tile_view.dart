@@ -27,32 +27,24 @@ class MyListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return expanded == true
         ? Expanded(
-            child: Material(
-              child: Card(
-                child: ListTile(
-                  onTap: onTap,
-                  leading: leading,
-                  title: title,
-                  tileColor: tileColor,
-                  iconColor: iconColor,
-                  subtitle: subtitle,
-                  trailing: trailing,
-                ),
-              ),
+            child: ListTile(
+              onTap: onTap,
+              leading: leading,
+              title: title,
+              tileColor: tileColor,
+              iconColor: iconColor,
+              subtitle: subtitle,
+              trailing: trailing,
             ),
           )
-        : Material(
-            child: Card(
-              child: ListTile(
-                onTap: onTap,
-                leading: leading,
-                title: title,
-                tileColor: tileColor,
-                iconColor: iconColor,
-                subtitle: subtitle,
-                trailing: trailing,
-              ),
-            ),
-          );
+        : ListTile(
+          onTap: onTap,
+          leading: leading,
+          title: title,
+          tileColor: tileColor,
+          iconColor: iconColor,
+          subtitle: subtitle,
+          trailing: trailing,
+        );
   }
 }

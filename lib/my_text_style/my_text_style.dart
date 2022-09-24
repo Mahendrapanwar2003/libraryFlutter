@@ -339,12 +339,12 @@ class MyTextTheme {
           MyColors().text,
           fontFamily: fontFamily,
         ),
-    /* headline6: MyTextThemeStyle.headline6(
+       headline6: MyTextThemeStyle.bodySmall(
           MyColors().text,
           fontFamily: fontFamily,
-        ),*/
+        ),
         subtitle1: MyTextThemeStyle.subtitle1(
-          MyColors().caption,
+          MyColors().text.withOpacity(0.9),
           fontFamily: fontFamily,
         ),
         subtitle2: MyTextThemeStyle.subtitle2(
@@ -352,7 +352,7 @@ class MyTextTheme {
           fontFamily: fontFamily,
         ),
         bodyText1: MyTextThemeStyle.bodyText1(
-          MyColors().text,
+          MyColors().textField,
           fontFamily: fontFamily,
         ),
         bodyText2: MyTextThemeStyle.bodyText2(
