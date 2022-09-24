@@ -9,27 +9,12 @@ class ImageVi extends StatefulWidget {
 }
 
 class _ImageViState extends State<ImageVi> {
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          SizedBox(
-            height: double.infinity,
-            width: double.infinity,
-            child: Stack(
-              children: [
-                const SizedBox(
-                  height: 30,
-                  child: HeaderWidget(
-                    height: 30,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+    return ResponsiveSizer(
+      builder: (p0, p1, p2) => Scaffold(
+        body: HeaderWidget(
+            height: 15.h, height1: 20.h, height2: 25.h, height3: 30.h),
       ),
     );
   }

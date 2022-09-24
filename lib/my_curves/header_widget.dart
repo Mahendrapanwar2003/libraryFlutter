@@ -1,10 +1,15 @@
 part of ui_library;
 class HeaderWidget extends StatelessWidget {
   final double height;
-
+  final double height1;
+  final double height2;
+  final double height3;
   const HeaderWidget({
     Key? key,
     required this.height,
+    required this.height1,
+    this.height2=0.0,
+    this.height3=0.0,
   }) : super(key: key);
 
   @override
@@ -12,6 +17,42 @@ class HeaderWidget extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Stack(
+      children: [
+        ClipPath(
+          clipper: WaveShape(),
+          child: Container(
+            width: double.infinity,
+            height: height,
+            color: MyColors().primary.withOpacity(.6),
+          ),
+        ),
+        ClipPath(
+          clipper: WaveShape(),
+          child: Container(
+            width: double.infinity,
+            height: height1,
+            color: MyColors().primary.withOpacity(.4),
+          ),
+        ),
+        ClipPath(
+          clipper: WaveShape(),
+          child: Container(
+            width: double.infinity,
+            height: height2,
+            color: MyColors().primary.withOpacity(.3),
+          ),
+        ),
+        ClipPath(
+          clipper: WaveShape(),
+          child: Container(
+            width: double.infinity,
+            height: height3,
+            color: MyColors().primary.withOpacity(.2),
+          ),
+        ),
+      ],
+    );
+   /* return Stack(
       children: [
         ClipPath(
           child: Container(
@@ -56,9 +97,27 @@ class HeaderWidget extends StatelessWidget {
           ]),
         ),
       ],
-    );
+    );*/
   }
 }
+
+class WaveShape extends CustomClipper<Path> {
+  @override
+  getClip(Size size) {
+    double height = size.height;
+    double width = size.width;
+    var p = Path();
+    p.lineTo(0, 0);
+    p.cubicTo(width * 1 / 2, 0, width * 2 / 4, height, width, height);
+    p.lineTo(width, 0);
+    p.close();
+    return p;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper oldClipper) => true;
+}
+
 
 class ShapeClipper extends CustomClipper<Path> {
   final List<Offset> _offsets;

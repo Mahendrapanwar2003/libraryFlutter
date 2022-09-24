@@ -1,7 +1,7 @@
 part of ui_library;
 
 class MyGridView extends StatelessWidget {
-  final List<Widget> listOfData;
+  final Widget listOfData;
   final bool isVertical;
   final double horizontalPadding;
   final double verticalPadding;
@@ -16,6 +16,7 @@ class MyGridView extends StatelessWidget {
   final int animationShowDuration;
   final Curve curve;
   final double radiusMaterial;
+  final int itemCount;
 
   const MyGridView({
     Key? key,
@@ -31,6 +32,7 @@ class MyGridView extends StatelessWidget {
     this.mainAxisSpacing = 5,
     this.columnCount = 2,
     this.radiusMaterial = 10,
+    required this.itemCount,
     this.curve = Curves.decelerate,
     this.animationShowDuration = 2,
     this.clipBehavior = Clip.hardEdge,
@@ -50,7 +52,7 @@ class MyGridView extends StatelessWidget {
         scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
         crossAxisCount: columnCount,
         children: List.generate(
-          listOfData.length,
+          itemCount,
           (int index) {
             return AnimationConfiguration.staggeredGrid(
               position: index,
@@ -63,10 +65,7 @@ class MyGridView extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         horizontal: horizontalPadding,
                         vertical: verticalPadding),
-                    child: Material(
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radiusMaterial)),
-                      child: listOfData[index],
-                    ),
+                    child: listOfData,
                   ),
                 ),
               ),
