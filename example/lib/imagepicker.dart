@@ -21,11 +21,7 @@ class _ImageViState extends State<ImageVi> {
             child: Stack(
               children: [
                 const SizedBox(
-                  height: 30,
-                  child: HeaderWidget(
-                    height: 30,
-                  ),
-                ),
+                  height: 30,),
               ],
             ),
           ),
