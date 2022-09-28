@@ -5,7 +5,7 @@ class MyThemeData {
     return ThemeData(
       textTheme: MyTextTheme().myTextTheme(fontFamily: fontFamily),
       textSelectionTheme:
-          TextSelectionThemeData(cursorColor: MyColors().primary),
+      TextSelectionThemeData(cursorColor: MyColors().primary),
       inputDecorationTheme: InputDecorationTheme(
           contentPadding: const EdgeInsets.only(top: 8),
           constraints: BoxConstraints(maxHeight: 70.px),
