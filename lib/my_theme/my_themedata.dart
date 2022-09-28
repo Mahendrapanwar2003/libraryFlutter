@@ -4,6 +4,11 @@ class MyThemeData {
   static ThemeData themeData({required Orientation? orientation}) {
     return ThemeData(
       textTheme: MyTextTheme().myTextTheme,
+      primaryColor: MyColors().primary,
+      scaffoldBackgroundColor: Colors.white,
+      appBarTheme: AppBarTheme(
+        backgroundColor: MyColors().primary,
+      ),
       textSelectionTheme:
           TextSelectionThemeData(cursorColor: MyColors().primary),
       inputDecorationTheme: InputDecorationTheme(
@@ -44,10 +49,11 @@ class MyThemeData {
         style: OutlinedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25.px),
-            ),maximumSize: Size(35.w, 50.px),
-            side: BorderSide(color: MyColors().caption,width: 1.0),
-            padding: EdgeInsets.all(3.5.px)
-        ), ),
+            ),
+            maximumSize: Size(35.w, 50.px),
+            side: BorderSide(color: MyColors().caption, width: 1.0),
+            padding: EdgeInsets.all(3.5.px)),
+      ),
     );
   }
 }
