@@ -15,8 +15,13 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:loading_animations/loading_animations.dart';
 import 'package:lottie/lottie.dart';
 import 'package:switcher/core/switcher_size.dart';
+import 'dart:developer';
+import 'package:http/http.dart' as http;
+
+
 
 part 'my_list/my_list_view.dart';
+
 part 'my_list/my_grid_view.dart';
 
 part 'my_animations/my_annimations.dart';
@@ -48,3 +53,6 @@ part 'my_animations/my_animated_toast.dart';
 part 'my_button/my_switch_button.dart';
 
 part 'my_curves/header_widget.dart';
+
+part 'my_http/my_http.dart';
+
