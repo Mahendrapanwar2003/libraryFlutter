@@ -314,19 +314,21 @@ class MyTextThemeStyle {
 }
 
 class MyTextTheme {
-  String fontFamily = "";
 
-  TextTheme get myTextTheme => TextTheme(
+  TextTheme  myTextTheme({String? fontFamily}) {
+    String semiBold ="${fontFamily}SemiBold";
+    String regular ="${fontFamily}Regular";
+    return TextTheme(
 
-       headline1: MyTextThemeStyle.headlineLarge(
-          MyColors().text,
-          fontFamily: fontFamily,
-        ),
-        headline2: MyTextThemeStyle.titleLarge(
-          MyColors().text,
-          fontFamily: fontFamily,
-        ),
-        /*
+      headline1: MyTextThemeStyle.headlineLarge(
+        MyColors().text,
+        fontFamily: semiBold,
+      ),
+      headline2: MyTextThemeStyle.titleLarge(
+        MyColors().text,
+        fontFamily: regular,
+      ),
+      /*
         headline3: MyTextThemeStyle.headline3(
           MyColors().secondary,
           fontFamily: fontFamily,
@@ -335,41 +337,42 @@ class MyTextTheme {
           MyColors().secondary,
           fontFamily: fontFamily,
         ),*/
-        headline5: MyTextThemeStyle.headline5(
-          MyColors().text,
-          fontFamily: fontFamily,
-        ),
-       headline6: MyTextThemeStyle.bodySmall(
-          MyColors().text,
-          fontFamily: fontFamily,
-        ),
-        subtitle1: MyTextThemeStyle.subtitle1(
-          MyColors().text.withOpacity(0.9),
-          fontFamily: fontFamily,
-        ),
-        subtitle2: MyTextThemeStyle.subtitle2(
-          MyColors().primary,
-          fontFamily: fontFamily,
-        ),
-        bodyText1: MyTextThemeStyle.bodyText1(
-          MyColors().textField,
-          fontFamily: fontFamily,
-        ),
-        bodyText2: MyTextThemeStyle.bodyText2(
-          MyColors().text,
-          fontFamily: fontFamily,
-        ),
-        button:MyTextThemeStyle.button(
-          MyColors().button,
-          fontFamily: fontFamily,
-        ),
-        caption: MyTextThemeStyle.caption(
-          MyColors().caption,
-          fontFamily: fontFamily,
-        ),/*
+      headline5: MyTextThemeStyle.headline5(
+        MyColors().text,
+        fontFamily: regular,
+      ),
+      headline6: MyTextThemeStyle.bodySmall(
+        MyColors().text,
+        fontFamily: regular,
+      ),
+      subtitle1: MyTextThemeStyle.subtitle1(
+        MyColors().text.withOpacity(0.9),
+        fontFamily: semiBold,
+      ),
+      subtitle2: MyTextThemeStyle.subtitle2(
+        MyColors().primary,
+        fontFamily: semiBold,
+      ),
+      bodyText1: MyTextThemeStyle.bodyText1(
+        MyColors().textField,
+        fontFamily: regular,
+      ),
+      bodyText2: MyTextThemeStyle.bodyText2(
+        MyColors().text,
+        fontFamily: regular,
+      ),
+      button: MyTextThemeStyle.button(
+        MyColors().button,
+        fontFamily: semiBold,
+      ),
+      caption: MyTextThemeStyle.caption(
+        MyColors().caption,
+        fontFamily: semiBold,
+      ), /*
         overline: MyTextThemeStyle.overline(
           MyColors().secondary,
           fontFamily: fontFamily,
         ),*/
-      );
+    );
+  }
 }

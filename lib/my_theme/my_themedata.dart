@@ -1,9 +1,9 @@
 part of ui_library;
 
 class MyThemeData {
-  static ThemeData themeData({required Orientation? orientation}) {
+  static ThemeData themeData({required Orientation? orientation,String? fontFamily}) {
     return ThemeData(
-      textTheme: MyTextTheme().myTextTheme,
+      textTheme: MyTextTheme().myTextTheme(fontFamily: fontFamily),
       textSelectionTheme:
           TextSelectionThemeData(cursorColor: MyColors().primary),
       inputDecorationTheme: InputDecorationTheme(
