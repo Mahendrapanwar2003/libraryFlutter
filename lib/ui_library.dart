@@ -5,7 +5,9 @@ import 'dart:io';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
+import 'package:http/http.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -15,6 +17,9 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:loading_animations/loading_animations.dart';
 import 'package:lottie/lottie.dart';
 import 'package:switcher/core/switcher_size.dart';
+import 'package:http/http.dart' as http;
+import 'dart:developer';
+
 
 part 'my_list/my_list_view.dart';
 part 'my_list/my_grid_view.dart';
@@ -48,3 +53,5 @@ part 'my_animations/my_animated_toast.dart';
 part 'my_button/my_switch_button.dart';
 
 part 'my_curves/header_widget.dart';
+
+part 'http/http.dart';
