@@ -1,7 +1,7 @@
 part of ui_library;
 
 class MyGridView extends StatelessWidget {
-  final Widget listOfData;
+  final Function listOfData;
   final bool isVertical;
   final double horizontalPadding;
   final double verticalPadding;
@@ -53,7 +53,7 @@ class MyGridView extends StatelessWidget {
         crossAxisCount: columnCount,
         children: List.generate(
           itemCount,
-          (int index) {
+              (int index) {
             return AnimationConfiguration.staggeredGrid(
               position: index,
               duration: Duration(seconds: animationShowDuration),
@@ -65,7 +65,7 @@ class MyGridView extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                         horizontal: horizontalPadding,
                         vertical: verticalPadding),
-                    child: listOfData,
+                    child: listOfData(index),
                   ),
                 ),
               ),
