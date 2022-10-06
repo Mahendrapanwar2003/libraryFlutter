@@ -53,7 +53,7 @@ class MyGridView extends StatelessWidget {
         crossAxisCount: columnCount,
         children: List.generate(
           itemCount,
-          (int index) {
+              (int index) {
             return AnimationConfiguration.staggeredGrid(
               position: index,
               duration: Duration(seconds: animationShowDuration),
