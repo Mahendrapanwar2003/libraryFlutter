@@ -55,7 +55,7 @@ class MyHttp {
   static http.MultipartFile getUserProfileImageFile({File? image, required String userProfileImageKey}) {
     return http.MultipartFile.fromBytes(userProfileImageKey,
       image!.readAsBytesSync(),
-      filename: image!.uri.pathSegments.last,
+      filename: image.uri.pathSegments.last,
     );
   }
 }
