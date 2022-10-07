@@ -178,6 +178,7 @@ class MyTextThemeStyle {
       decoration: TextDecoration.none,
     );
   }
+
   static TextStyle headlineLarge(Color color, {String? fontFamily}) {
     return TextStyle(
       fontSize: 32.px,
@@ -328,15 +329,14 @@ class MyTextTheme {
         MyColors().text,
         fontFamily: regular,
       ),
-      /*
-        headline3: MyTextThemeStyle.headline3(
-          MyColors().secondary,
+        headline3: MyTextThemeStyle.headlineMedium(
+          MyColors().button,
           fontFamily: fontFamily,
         ),
-        headline4: MyTextThemeStyle.headline4(
-          MyColors().secondary,
-          fontFamily: fontFamily,
-        ),*/
+        headline4: MyTextThemeStyle.headline6(
+          MyColors().text,
+          fontFamily: semiBold,
+        ),
       headline5: MyTextThemeStyle.headline5(
         MyColors().text,
         fontFamily: regular,
@@ -368,7 +368,8 @@ class MyTextTheme {
       caption: MyTextThemeStyle.caption(
         MyColors().caption,
         fontFamily: semiBold,
-      ), /*
+      ),
+      /*
         overline: MyTextThemeStyle.overline(
           MyColors().secondary,
           fontFamily: fontFamily,
