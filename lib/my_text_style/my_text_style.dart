@@ -178,6 +178,7 @@ class MyTextThemeStyle {
       decoration: TextDecoration.none,
     );
   }
+
   static TextStyle headlineLarge(Color color, {String? fontFamily}) {
     return TextStyle(
       fontSize: 32.px,

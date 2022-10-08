@@ -59,4 +59,17 @@ class MyHttp {
       filename: image.uri.pathSegments.last,
     );
   }
+
+  static Future<http.Response> getMethodForParams(
+      {required Map<String, String> token,
+      required Map<String, dynamic> queryParameters,
+      required String baseUri,
+      required String endPointUri}) async {
+    Uri uri = Uri.http(baseUri, endPointUri, queryParameters);
+    if (kDebugMode) print("CALLING:: {uri}");
+    http.Response response = await http.get(uri, headers: token);
+    if (kDebugMode) print("CALLING:: ${response.body}");
+    return response;
+
+  }
 }
