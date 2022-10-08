@@ -369,10 +369,6 @@ class MyTextTheme {
         MyColors().caption,
         fontFamily: semiBold,
       ),
-      labelMedium: MyTextThemeStyle.labelMedium(
-        MyColors().textField,
-        fontFamily: semiBold,
-      ),
       /*
         overline: MyTextThemeStyle.overline(
           MyColors().secondary,
