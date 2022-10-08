@@ -62,9 +62,9 @@ class MyHttp {
 
   static Future<http.Response> getMethodForParams(
       {required Map<String, String> authorization,
-      required Map<String, dynamic> queryParameters,
-      required String baseUri,
-      required String endPointUri}) async {
+        required Map<String, dynamic> queryParameters,
+        required String baseUri,
+        required String endPointUri}) async {
     Uri uri = Uri.http(baseUri, endPointUri, queryParameters);
     if (kDebugMode) print("CALLING:: $uri");
     http.Response response = await http.get(uri, headers: authorization);
