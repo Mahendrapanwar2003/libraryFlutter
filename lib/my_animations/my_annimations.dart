@@ -4,15 +4,17 @@ part of ui_library;
 class MyAnimations extends StatelessWidget {
   String pathNetwork;
   String pathJson;
-
+  bool repeat;
   MyAnimations({
     Key? key,
     this.pathJson = '',
     this.pathNetwork = '',
+    this.repeat = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return pathNetwork != '' ? Lottie.network(pathNetwork) : Lottie.asset(pathJson);
+    return pathNetwork != '' ? LottieBuilder.network(pathNetwork,repeat: repeat)
+    : LottieBuilder.asset(pathJson,repeat: repeat);
   }
 }
