@@ -2,9 +2,11 @@ library ui_library;
 
 export 'package:ui_library/ui_library.dart';
 import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -62,3 +64,4 @@ part 'my_toast/mToast.dart';
 
 part 'status_code_constant/status_code_constant.dart';
 
+part 'my_common_method/my_common_method.dart';
