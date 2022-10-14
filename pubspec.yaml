@@ -24,6 +24,9 @@ dependencies:
   switcher_button: ^0.0.4
   switcher: ^1.0.0
   http: ^0.13.5
+  flutter_windowmanager: ^0.2.0
+  internet_connection_checker: ^1.0.0+1
+
 
 
 dev_dependencies:
