@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:m_toast/m_toast.dart';
+import 'package:lottie/lottie.dart';
 import 'package:ui_library/ui_library.dart';
 
 class ImageVi extends StatefulWidget {
@@ -10,26 +10,23 @@ class ImageVi extends StatefulWidget {
 }
 
 class _ImageViState extends State<ImageVi> {
+  Animation<double>? controller;
+  bool i =true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body:ListView(children: [
         ElevatedButton(onPressed: (){
-
-          ShowMToast toast = ShowMToast();
-
-          toast.successToast(context, message: "Hello", alignment: Alignment.bottomCenter,icon: Icons.verified,);
-
+          setState(() {
+            i=!i;
+          });
         }, child: Text("Success")),
-        ElevatedButton(onPressed: (){
-
-          ShowMToast toast = ShowMToast();
-
-          toast.errorToast(context, message: "Hello", alignment: Alignment.bottomCenter,icon: Icons.cancel);
-
-        }, child: Text("error"))
+       LottieBuilder.network(controller: controller,"https://assets3.lottiefiles.com/packages/lf20_095kjt08.json",repeat: i,)
       ],)
     );
   }
 }
+
+
+
