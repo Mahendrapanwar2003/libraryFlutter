@@ -25,9 +25,9 @@ class MyTextThemeStyle {
 
   static TextStyle headline3(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 48.px,
+      fontSize: 40.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w700,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -49,7 +49,7 @@ class MyTextThemeStyle {
     return TextStyle(
       fontSize: 24.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w600,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -71,8 +71,7 @@ class MyTextThemeStyle {
     return TextStyle(
       fontSize: 16.px,
       fontFamily: fontFamily,
-     // fontWeight: FontWeight.w400,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w600,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -330,35 +329,41 @@ class MyTextTheme {
         fontFamily: regular,
       ),
         headline3: MyTextThemeStyle.headlineMedium(
-          MyColors().button,
-          fontFamily: fontFamily,
+          ColorConstants.textField,
+          fontFamily: semiBold,
         ),
         headline4: MyTextThemeStyle.headline6(
           MyColors().text,
           fontFamily: semiBold,
         ),
+
+      //TODO new
       headline5: MyTextThemeStyle.headline5(
-        MyColors().text,
+        ColorConstants.button,
         fontFamily: regular,
       ),
+      //TODO NEW
       headline6: MyTextThemeStyle.bodySmall(
-        MyColors().text,
+        ColorConstants.button,
         fontFamily: regular,
       ),
+      //TODO NEW
       subtitle1: MyTextThemeStyle.subtitle1(
-        MyColors().text.withOpacity(0.9),
+       ColorConstants.button,
         fontFamily: semiBold,
       ),
       subtitle2: MyTextThemeStyle.subtitle2(
         MyColors().primary,
         fontFamily: semiBold,
       ),
+      //TODO new
       bodyText1: MyTextThemeStyle.bodyText1(
-        MyColors().textField,
+        ColorConstants.button,
         fontFamily: regular,
       ),
+      //TODO NEW
       bodyText2: MyTextThemeStyle.bodyText2(
-        MyColors().text,
+        ColorConstants.button,
         fontFamily: regular,
       ),
       button: MyTextThemeStyle.button(
@@ -373,6 +378,7 @@ class MyTextTheme {
         MyColors().textField,
         fontFamily: semiBold,
       ),
+
       /*
         overline: MyTextThemeStyle.overline(
           MyColors().secondary,
