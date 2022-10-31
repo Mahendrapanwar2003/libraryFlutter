@@ -130,3 +130,45 @@ class MyColors {
 
 
 }
+
+class ColorConstants {
+  static const Color onPrimary = Color(0xFF9E9E9E);
+
+  static const Color primary = Color(0xFFFBAD33);
+
+  static const Color secondary = Color(0xFFF2653A);
+
+
+  static const Color button = Color(0xFFFFFFFF);
+
+
+  static const Color textField = Color(0xFF000000);
+
+  static const Color productItemYellowColor = Color(0xFFFFC600);
+  static const Color walletTransactionRedColor = Color(0xFFFF7474);
+  static const Color productItemRedColor = Color(0xFFFF0000);
+  static const Color walletTransactionGreenColor = Color(0xFF73FF81);
+  static const Color customizeGreenColor = Color(0xFFBCFF00);
+  static const Color productItemBlueColor = Color(0xFF5BB0FF);
+  static const Color whiteModeLightestGreyColor = Color(0xFFF5F5F5);
+  static const Color whiteModeLighterGreyColor = Color(0xFFEEEEEE);
+  static const Color whiteModeLightGreyColor = Color(0xFFE0E0E0);
+  static const Color otpGreyColor = Color(0xFFF0F0F0);
+  static const Color customizeGreyColor = Color(0xE5FFFFFF);
+  static const Color addPaymentCardGreyColor = Color(0xFFD9D9D9);
+  static const Color paymentMethodDashColor = Color(0xFFBDBDBD);
+  static const Color greyColor = Color(0x99FFFFFF);
+  static const Color reviewFilterColor = Color(0xFF929292);
+  static const Color searchBarGreyColor = Color(0xFF7C7C7C);
+  static const Color hintGreyColor = Color(0xFF757575);
+  static const Color profileMenuDashColor = Color(0x40FFFFFF);
+  static const Color sellProductConditionTextColor = Color(0xFF535353);
+  static const Color unavailableSizeTextColor = Color(0xFF444040);
+  static const Color searchDashColor = Color(0x26FFFFFF);
+  static const Color unavailableSizeBorderColor = Color(0xFF353535);
+  static const Color profileCompletionColor = Color(0x1A000000);
+  static const Color backgroundBlurColor = Color(0x801F1F1F);
+  static const Color bottomSheetDashColor = Color(0x66000000);
+  static const Color bottomSheetGreyTextColor = Color(0x99000000);
+  static const Color whiteBGColor = Color(0xFFF2F2F2);
+}
