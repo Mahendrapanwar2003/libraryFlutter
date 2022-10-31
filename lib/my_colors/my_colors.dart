@@ -138,7 +138,6 @@ class ColorConstants {
 
   static const Color secondary = Color(0xFFF2653A);
 
-
   static const Color button = Color(0xFFFFFFFF);
 
 
