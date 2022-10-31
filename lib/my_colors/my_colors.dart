@@ -1,14 +1,14 @@
 part of ui_library;
 
-class MyColors {
+ abstract class MyColors {
   /* --------------------------Primary Colors Collection--------------------------*/
-  Color get primaryColor => const Color(0xff);
+  Color get primaryColor;
 
-  Color get primary => const Color(0xff4993E3);
+  Color get primary;
 
   Color get primaryContainer => const Color(0xff);
 
-  Color get onPrimary => const Color(0xff91C9EE);
+  Color get onPrimary ;
 
   Color get onPrimaryContainer => const Color(0xff);
 
@@ -17,7 +17,7 @@ class MyColors {
   Color get inversePrimary => const Color(0xff);
 
   /* --------------------------Secondary Colors Collection--------------------------*/
-  Color get secondary => const Color(0xff9B8CDF);
+  Color get secondary ;
 
   Color get secondaryContainer => const Color(0xff);
 
@@ -45,7 +45,7 @@ class MyColors {
 
   Color get onBackGround => const Color(0xff);
 
-  Color get scaffoldBackgroundColor => const Color(0xff);
+  Color get scaffoldBackgroundColor ;
 
   Color get dialogBackgroundColor => const Color(0xff);
 
@@ -131,6 +131,46 @@ class MyColors {
 
 }
 
+
+class MyColorsLight extends MyColors{
+  @override
+  Color get primaryColor =>  const Color(0xFFFBAD33);
+
+  @override
+  Color get primary =>const Color(0xFFF2653A);
+
+  @override
+  Color get onPrimary => const Color(0xFF9E9E9E);
+
+  @override
+  Color get secondary =>  const  Color(0xFFffffff);
+
+  @override
+  Color get scaffoldBackgroundColor => const Color(0xffffffff);
+}
+
+
+class MyColorsDark extends MyColors{
+
+  @override
+  Color get primaryColor =>  const Color(0xFFFBAD33);
+
+  @override
+  Color get primary =>const Color(0xFFF2653A);
+
+  @override
+  Color get onPrimary => const Color(0xFF9E9E9E);
+
+  @override
+  Color get secondary =>  const  Color(0xFF000000);
+
+  @override
+  Color get scaffoldBackgroundColor => const Color(0xff000000);
+
+}
+
+
+
 class ColorConstants {
   static const Color onPrimary = Color(0xFF9E9E9E);
 
@@ -138,9 +178,7 @@ class ColorConstants {
 
   static const Color secondary = Color(0xFFF2653A);
 
-
   static const Color button = Color(0xFFFFFFFF);
-
 
   static const Color textField = Color(0xFF000000);
 

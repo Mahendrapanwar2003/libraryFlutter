@@ -313,19 +313,20 @@ class MyTextThemeStyle {
   }
 }
 
-class MyTextTheme {
-
-  TextTheme  myTextTheme({String? fontFamily}) {
+class MyTextThemeLight {
+  TextTheme  myTextTheme({String? fontFamily,}) {
     String semiBold ="${fontFamily}SemiBold";
     String regular ="${fontFamily}Regular";
-    return TextTheme(
+    String light ="${fontFamily}Light";
+    String bold ="${fontFamily}Bold";
 
+    return TextTheme(
       headline1: MyTextThemeStyle.headlineLarge(
-        MyColors().text,
+        MyColorsLight().text,
         fontFamily: semiBold,
       ),
       headline2: MyTextThemeStyle.titleLarge(
-        MyColors().text,
+        MyColorsLight().text,
         fontFamily: regular,
       ),
         headline3: MyTextThemeStyle.headlineMedium(
@@ -333,7 +334,7 @@ class MyTextTheme {
           fontFamily: semiBold,
         ),
         headline4: MyTextThemeStyle.headline6(
-          MyColors().text,
+          MyColorsLight().text,
           fontFamily: semiBold,
         ),
 
@@ -353,7 +354,7 @@ class MyTextTheme {
         fontFamily: semiBold,
       ),
       subtitle2: MyTextThemeStyle.subtitle2(
-        MyColors().primary,
+        Colors.black,
         fontFamily: semiBold,
       ),
       //TODO new
@@ -367,21 +368,95 @@ class MyTextTheme {
         fontFamily: regular,
       ),
       button: MyTextThemeStyle.button(
-        MyColors().button,
+        MyColorsLight().button,
         fontFamily: semiBold,
       ),
       caption: MyTextThemeStyle.caption(
-        MyColors().caption,
+        MyColorsLight().caption,
         fontFamily: semiBold,
       ),
       labelMedium: MyTextThemeStyle.labelMedium(
-        MyColors().textField,
+        MyColorsLight().textField,
         fontFamily: semiBold,
       ),
 
       /*
         overline: MyTextThemeStyle.overline(
-          MyColors().secondary,
+          MyColorsLight().secondary,
+          fontFamily: fontFamily,
+        ),*/
+    );
+  }
+}
+
+class MyTextThemeDark{
+  TextTheme  myTextTheme({String? fontFamily,}) {
+    String semiBold ="${fontFamily}SemiBold";
+    String regular ="${fontFamily}Regular";
+    String light ="${fontFamily}Light";
+    String bold ="${fontFamily}Bold";
+    return TextTheme(
+       headline1: MyTextThemeStyle.headlineLarge(
+        MyColorsDark().text,
+        fontFamily: semiBold,
+      ),
+      headline2: MyTextThemeStyle.titleLarge(
+        MyColorsDark().text,
+        fontFamily: regular,
+      ),
+        headline3: MyTextThemeStyle.headlineMedium(
+          ColorConstants.textField,
+          fontFamily: semiBold,
+        ),
+        headline4: MyTextThemeStyle.headline6(
+          MyColorsDark().text,
+          fontFamily: semiBold,
+        ),
+
+      //TODO new
+      headline5: MyTextThemeStyle.headline5(
+        ColorConstants.button,
+        fontFamily: regular,
+      ),
+      //TODO NEW
+      headline6: MyTextThemeStyle.bodySmall(
+        ColorConstants.button,
+        fontFamily: regular,
+      ),
+      //TODO NEW
+      subtitle1: MyTextThemeStyle.subtitle1(
+        ColorConstants.button,
+        fontFamily: semiBold,
+      ),
+      subtitle2: MyTextThemeStyle.subtitle2(
+        Colors.white,
+        fontFamily: semiBold,
+      ),
+      //TODO new
+      bodyText1: MyTextThemeStyle.bodyText1(
+        ColorConstants.button,
+        fontFamily: regular,
+      ),
+      //TODO NEW
+      bodyText2: MyTextThemeStyle.bodyText2(
+        ColorConstants.button,
+        fontFamily: regular,
+      ),
+       button: MyTextThemeStyle.button(
+        MyColorsDark().button,
+        fontFamily: semiBold,
+      ),
+      caption: MyTextThemeStyle.caption(
+        MyColorsDark().caption,
+        fontFamily: semiBold,
+      ),
+      labelMedium: MyTextThemeStyle.labelMedium(
+        MyColorsDark().textField,
+        fontFamily: semiBold,
+      ),
+      /*
+        overline: MyTextThemeStyle.overline(
+          MyColorsDark().secondary,
           fontFamily: fontFamily,
         ),*/
     );
