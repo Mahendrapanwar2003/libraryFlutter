@@ -23,7 +23,7 @@ class HeaderWidget extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: height,
-            color: MyColors().primary.withOpacity(.6),
+           // color: MyColors().primary.withOpacity(.6),
           ),
         ),
         ClipPath(
@@ -31,7 +31,7 @@ class HeaderWidget extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: height1,
-            color: MyColors().primary.withOpacity(.4),
+          //  color: MyColors().primary.withOpacity(.4),
           ),
         ),
         ClipPath(
@@ -39,7 +39,7 @@ class HeaderWidget extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: height2,
-            color: MyColors().primary.withOpacity(.3),
+          //  color: MyColors().primary.withOpacity(.3),
           ),
         ),
         ClipPath(
@@ -47,7 +47,7 @@ class HeaderWidget extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: height3,
-            color: MyColors().primary.withOpacity(.2),
+          //  color: MyColors()..primary.withOpacity(.2),
           ),
         ),
       ],
