@@ -2,9 +2,9 @@ part of ui_library;
 
 class MyThemeData {
 
-  static ThemeData themeDataLight({required Orientation? orientation,String? fontFamily, required BuildContext context}) {
+  static ThemeData themeDataLight({required Orientation? orientation,String? fontFamily}) {
     return ThemeData(
-      textTheme: MyTextThemeLight().myTextTheme(fontFamily: fontFamily,),
+      textTheme: MyTextThemeLight().myTextTheme(fontFamily: fontFamily),
 
       textSelectionTheme:  TextSelectionThemeData(cursorColor: MyColorsLight().primaryColor),
 
@@ -61,9 +61,9 @@ class MyThemeData {
     );
   }
 
-  static ThemeData themeDataDark({required Orientation? orientation,String? fontFamily, required BuildContext context}) {
+  static ThemeData themeDataDark({required Orientation? orientation,String? fontFamily}) {
     return ThemeData(
-      textTheme: MyTextThemeDark().myTextTheme(fontFamily: fontFamily,),
+      textTheme: MyTextThemeDark().myTextTheme(fontFamily: fontFamily),
 
       textSelectionTheme:  TextSelectionThemeData(cursorColor: MyColorsDark().primaryColor),
 
@@ -115,7 +115,6 @@ class MyThemeData {
             shadowColor: Colors.transparent,
             padding: EdgeInsets.all(3.5.px)),
       ),
-
       scaffoldBackgroundColor: MyColorsDark().scaffoldBackgroundColor,
     );
 
