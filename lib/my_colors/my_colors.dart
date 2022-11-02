@@ -181,6 +181,7 @@ class ColorConstants {
   static const Color button = Color(0xFFFFFFFF);
 
   static const Color textField = Color(0xFF000000);
+  static const Color whiteModeGreyColor = Color(0xFF9E9E9E);
 
   static const Color productItemYellowColor = Color(0xFFFFC600);
   static const Color walletTransactionRedColor = Color(0xFFFF7474);
