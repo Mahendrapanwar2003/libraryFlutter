@@ -2,7 +2,7 @@ part of ui_library;
 
 class MyThemeData {
 
-  static ThemeData themeDataLight({required Orientation? orientation,String? fontFamily, required BuildContext context}) {
+  static ThemeData themeDataLight({required Orientation? orientation,String? fontFamily}) {
     return ThemeData(
       textTheme: MyTextThemeLight().myTextTheme(fontFamily: fontFamily,),
 
@@ -61,7 +61,7 @@ class MyThemeData {
     );
   }
 
-  static ThemeData themeDataDark({required Orientation? orientation,String? fontFamily, required BuildContext context}) {
+  static ThemeData themeDataDark({required Orientation? orientation,String? fontFamily}) {
     return ThemeData(
       textTheme: MyTextThemeDark().myTextTheme(fontFamily: fontFamily,),
 

@@ -15,12 +15,14 @@ class MyListView extends StatelessWidget {
   final Clip clipBehavior;
   final int itemCount;
   final double dividerHeight;
+  final Color dividerColor;
 
   const MyListView({
     Key? key,
     required this.listOfData,
     this.isVertical = true,
     this.primary = true,
+    this.dividerColor = Colors.black,
     this.horizontalPadding = 2,
     this.dividerHorizontalPadding = 0,
     this.dividerVerticalPadding = 0,
@@ -55,6 +57,7 @@ class MyListView extends StatelessWidget {
                   child: Divider(
                     height: dividerHeight,
                     thickness: dividerThickness,
+                    color: dividerColor,
                   ),
                 )
               : Padding(
@@ -64,6 +67,8 @@ class MyListView extends StatelessWidget {
                   child: VerticalDivider(
                     width: dividerHeight,
                     thickness: dividerThickness,
+                    color: dividerColor,
+
                   ),
                 );
         },
