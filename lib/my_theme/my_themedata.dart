@@ -2,12 +2,10 @@ part of ui_library;
 
 class MyThemeData {
 
-  static ThemeData themeDataLight({required Orientation? orientation,String? fontFamily, required BuildContext context}) {
+  static ThemeData themeDataLight({required Orientation? orientation,String? fontFamily,}) {
     return ThemeData(
       textTheme: MyTextThemeLight().myTextTheme(fontFamily: fontFamily,),
-
       textSelectionTheme:  TextSelectionThemeData(cursorColor: MyColorsLight().primaryColor),
-
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.only(top: 1),
         constraints: BoxConstraints(maxHeight: 70.px),
