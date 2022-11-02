@@ -17,6 +17,7 @@ class MyGridView extends StatelessWidget {
   final Curve curve;
   final double radiusMaterial;
   final int itemCount;
+  final double childAspectRatio;
 
   const MyGridView({
     Key? key,
@@ -35,6 +36,7 @@ class MyGridView extends StatelessWidget {
     required this.itemCount,
     this.curve = Curves.decelerate,
     this.animationShowDuration = 2,
+    this.childAspectRatio = 1,
     this.clipBehavior = Clip.hardEdge,
   }) : super(key: key);
 
@@ -42,6 +44,7 @@ class MyGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimationLimiter(
       child: GridView.count(
+        childAspectRatio: childAspectRatio,
         physics: physics,
         reverse: reverse,
         primary: primary,

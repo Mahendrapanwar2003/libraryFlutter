@@ -2,10 +2,12 @@ part of ui_library;
 
 class MyThemeData {
 
-  static ThemeData themeDataLight({required Orientation? orientation,String? fontFamily,}) {
+  static ThemeData themeDataLight({required Orientation? orientation,String? fontFamily, required BuildContext context}) {
     return ThemeData(
       textTheme: MyTextThemeLight().myTextTheme(fontFamily: fontFamily,),
+
       textSelectionTheme:  TextSelectionThemeData(cursorColor: MyColorsLight().primaryColor),
+
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.only(top: 1),
         constraints: BoxConstraints(maxHeight: 70.px),
@@ -20,8 +22,8 @@ class MyThemeData {
           ),
           focusedErrorBorder: UnderlineInputBorder(
             borderSide: BorderSide(width: 2, color: MyColors().error),
-          ),
-        hintStyle: MyTextThemeStyle.bodyText2(MyColors().caption)*/
+          ),*/
+        //hintStyle: MyTextThemeStyle.bodyText2(MyColors().caption),
       ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -58,7 +60,7 @@ class MyThemeData {
 
   static ThemeData themeDataDark({required Orientation? orientation,String? fontFamily,}) {
     return ThemeData(
-      textTheme: MyTextThemeDark().myTextTheme(fontFamily: fontFamily,),
+      textTheme: MyTextThemeDark().myTextTheme(fontFamily: fontFamily),
 
       textSelectionTheme:  TextSelectionThemeData(cursorColor: MyColorsDark().primaryColor),
 
@@ -76,8 +78,8 @@ class MyThemeData {
           ),
           focusedErrorBorder: UnderlineInputBorder(
             borderSide: BorderSide(width: 2, color: MyColors().error),
-          ),
-        hintStyle: MyTextThemeStyle.bodyText2(MyColors().caption),*/
+          ),*/
+        //hintStyle: MyTextThemeStyle.bodyText2(MyColors().caption),
       ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -109,6 +111,7 @@ class MyThemeData {
             padding: EdgeInsets.all(3.5.px),
             tapTargetSize:  MaterialTapTargetSize.shrinkWrap),
       ),
+
       scaffoldBackgroundColor: MyColorsDark().scaffoldBackgroundColor,
     );
 
