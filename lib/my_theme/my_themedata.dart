@@ -107,7 +107,7 @@ class MyThemeData {
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
             padding: EdgeInsets.all(3.5.px),
-        tapTargetSize:  MaterialTapTargetSize.shrinkWrap),
+            tapTargetSize:  MaterialTapTargetSize.shrinkWrap),
       ),
       scaffoldBackgroundColor: MyColorsDark().scaffoldBackgroundColor,
     );
