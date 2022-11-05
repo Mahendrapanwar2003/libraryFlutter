@@ -10,7 +10,7 @@ abstract class MyColors {
 
   Color get onPrimary ;
 
-  Color get primaryContainer => const Color(0xff);
+  Color get dashMenuColor;
 
   Color get onPrimaryContainer => const Color(0xff);
 
@@ -149,7 +149,7 @@ class MyColorsLight extends MyColors{
   Color get secondary =>  const  Color(0xFFffffff);
 
   @override
-  Color get dashMenuColor => const Color(0x40FFFFFF);
+  Color get dashMenuColor => const Color(0xFFE0E0E0);
 
   @override
   Color get scaffoldBackgroundColor => const Color(0xfff2f2f2);
@@ -196,6 +196,9 @@ class MyColorsDark extends MyColors{
   Color get onPrimary => const Color(0xFF9E9E9E);
 
   @override
+  Color get dashMenuColor => const Color(0x40FFFFFF);
+
+  @override
   Color get secondary =>  const  Color(0xFF000000);
 
   @override
@@ -227,7 +230,6 @@ class MyColorsDark extends MyColors{
 
   @override
   Color get error => const Color(0xffFF7474);
-
 }
 
 
