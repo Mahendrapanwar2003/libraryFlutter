@@ -1,16 +1,16 @@
 part of ui_library;
 
- abstract class MyColors {
+abstract class MyColors {
   /* --------------------------Primary Colors Collection--------------------------*/
   Color get primaryColor;
 
   Color get primary;
 
-  Color get dashMenuColor;
-
   Color get primaryContainer => const Color(0xff);
 
-  Color get onPrimary=> const Color(0xff) ;
+  Color get onPrimary ;
+
+  Color get primaryContainer => const Color(0xff);
 
   Color get onPrimaryContainer => const Color(0xff);
 
@@ -61,7 +61,7 @@ part of ui_library;
   /* --------------------------Error / DisabledColor/ IndicatorColor Colors Collection--------------------------*/
   Color get errorColor => const Color(0xff);
 
-  Color get error => const Color(0xffFF7575);
+  Color get error;
 
   Color get onError => const Color(0xff);
 
@@ -76,7 +76,7 @@ part of ui_library;
 
   /* --------------------------Success Colors Collection--------------------------*/
 
-  Color get success => const Color(0xff05D262);
+  Color get success;
 
   Color get onSuccess => const Color(0xff);
 
@@ -116,20 +116,21 @@ part of ui_library;
 
   /* --------------------------Text Colors Collection--------------------------*/
 
-  Color get text => const Color(0xff525252);
+  Color get text;
 
-  Color get onText => const Color(0xffC1C1C1);
+  Color get onText;
 
-  Color get textField => const Color(0xff000000);
+  Color get caption;
 
-  Color get caption => const Color(0xff808080);
+  Color get labelText;
 
+  Color get textField;
 
-  /* --------------------------Button Colors Collection--------------------------*/
+  Color get buttonText;
 
-  Color get button => const Color(0xffffffff);
+  /* --------------------------bottomBarColor Colors Collection--------------------------*/
 
-
+  Color get bottomBar;
 
 }
 
@@ -142,13 +143,44 @@ class MyColorsLight extends MyColors{
   Color get primary =>const Color(0xFFF2653A);
 
   @override
-  Color get secondary =>  const  Color(0xFFFFFFFF);
+  Color get onPrimary => const Color(0xFF9E9E9E);
 
   @override
-  Color get scaffoldBackgroundColor => const Color(0xffffffff);
+  Color get secondary =>  const  Color(0xFFffffff);
 
   @override
-  Color get dashMenuColor =>const Color(0xFFE0E0E0);
+  Color get dashMenuColor => const Color(0x40FFFFFF);
+
+  @override
+  Color get scaffoldBackgroundColor => const Color(0xfff2f2f2);
+
+  @override
+  Color get buttonText => const Color(0xFFFFFFFF);
+
+  @override
+  Color get labelText => const Color(0xffa0a0a0);
+
+  @override
+  Color get textField => const Color(0xff000000);
+
+  @override
+  Color get bottomBar => const Color(0xFFFFFFFF);
+
+  @override
+  Color get text => const Color(0xff000000);
+
+  @override
+  Color get onText => const Color(0xFFFFFFFF);
+
+  @override
+  Color get caption => const Color(0xff666666);
+
+  @override
+  Color get success => const Color(0xff74FF82);
+
+  @override
+  Color get error => const Color(0xffFF7474);
+
 }
 
 
@@ -161,19 +193,46 @@ class MyColorsDark extends MyColors{
   Color get primary =>const Color(0xFFF2653A);
 
   @override
+  Color get onPrimary => const Color(0xFF9E9E9E);
+
+  @override
   Color get secondary =>  const  Color(0xFF000000);
 
   @override
-  Color get scaffoldBackgroundColor => const Color(0xff000000);
+  Color get scaffoldBackgroundColor => const Color(0xff101010);
 
   @override
-  Color get dashMenuColor => const Color(0x40FFFFFF);
+  Color get buttonText => const Color(0xFFFFFFFF);
+
+  @override
+  Color get labelText => const Color(0xffa0a0a0);
+
+  @override
+  Color get textField => const Color(0xffffffff);
+
+  @override
+  Color get bottomBar => const Color(0xff141414);
+
+  @override
+  Color get text => const Color(0xffffffff);
+
+  @override
+  Color get onText => const Color(0xff141414);
+
+  @override
+  Color get caption => const Color(0xff666666);
+
+  @override
+  Color get success => const Color(0xff74FF82);
+
+  @override
+  Color get error => const Color(0xffFF7474);
 
 }
 
 
 
-class ColorConstants {
+class ColorConstant {
   static const Color productItemYellowColor = Color(0xFFFFC600);
   static const Color linearGradientStart = Color(0xFFFBAD33);
   static const Color linearGradientEnd = Color(0xFFF2653A);
@@ -208,3 +267,43 @@ class ColorConstants {
   static const Color whiteBGColor = Color(0xFFF2F2F2);
 }
 
+class ColorConstants {
+  static const Color onPrimary = Color(0xFF9E9E9E);
+
+  static const Color primary = Color(0xFFFBAD33);
+
+  static const Color secondary = Color(0xFFF2653A);
+
+  static const Color button = Color(0xFFFFFFFF);
+
+  static const Color textField = Color(0xFF000000);
+  static const Color whiteModeGreyColor = Color(0xFF9E9E9E);
+
+  static const Color productItemYellowColor = Color(0xFFFFC600);
+  static const Color walletTransactionRedColor = Color(0xFFFF7474);
+  static const Color productItemRedColor = Color(0xFFFF0000);
+  static const Color walletTransactionGreenColor = Color(0xFF73FF81);
+  static const Color customizeGreenColor = Color(0xFFBCFF00);
+  static const Color productItemBlueColor = Color(0xFF5BB0FF);
+  static const Color whiteModeLightestGreyColor = Color(0xFFF5F5F5);
+  static const Color whiteModeLighterGreyColor = Color(0xFFEEEEEE);
+  static const Color whiteModeLightGreyColor = Color(0xFFE0E0E0);
+  static const Color otpGreyColor = Color(0xFFF0F0F0);
+  static const Color customizeGreyColor = Color(0xE5FFFFFF);
+  static const Color addPaymentCardGreyColor = Color(0xFFD9D9D9);
+  static const Color paymentMethodDashColor = Color(0xFFBDBDBD);
+  static const Color greyColor = Color(0x99FFFFFF);
+  static const Color reviewFilterColor = Color(0xFF929292);
+  static const Color searchBarGreyColor = Color(0xFF7C7C7C);
+  static const Color hintGreyColor = Color(0xFF757575);
+  static const Color profileMenuDashColor = Color(0x40FFFFFF);
+  static const Color sellProductConditionTextColor = Color(0xFF535353);
+  static const Color unavailableSizeTextColor = Color(0xFF444040);
+  static const Color searchDashColor = Color(0x26FFFFFF);
+  static const Color unavailableSizeBorderColor = Color(0xFF353535);
+  static const Color profileCompletionColor = Color(0x1A000000);
+  static const Color backgroundBlurColor = Color(0x801F1F1F);
+  static const Color bottomSheetDashColor = Color(0x66000000);
+  static const Color bottomSheetGreyTextColor = Color(0x99000000);
+  static const Color whiteBGColor = Color(0xFFF2F2F2);
+}
