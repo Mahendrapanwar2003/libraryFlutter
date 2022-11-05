@@ -9,10 +9,10 @@ class MyThemeData {
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.only(top: 1),
         constraints: BoxConstraints(maxHeight: 70.px),
-        enabledBorder: const UnderlineInputBorder(
+        enabledBorder:  UnderlineInputBorder(
           borderSide: BorderSide(width: 1, color: ColorConstants.onPrimary),
         ),
-        focusedBorder: const UnderlineInputBorder(
+        focusedBorder:  UnderlineInputBorder(
           borderSide: BorderSide(width: 1, color: ColorConstants.primary),
         ),
         /*errorBorder: UnderlineInputBorder(
@@ -65,10 +65,10 @@ class MyThemeData {
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.only(top: 1),
         constraints: BoxConstraints(maxHeight: 70.px),
-        enabledBorder: const UnderlineInputBorder(
+        enabledBorder:  UnderlineInputBorder(
           borderSide: BorderSide(width: 1, color: ColorConstants.onPrimary),
         ),
-        focusedBorder: const UnderlineInputBorder(
+        focusedBorder:  UnderlineInputBorder(
           borderSide: BorderSide(width: 1, color: ColorConstants.primary),
         ),
         /*errorBorder: UnderlineInputBorder(

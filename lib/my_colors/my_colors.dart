@@ -6,9 +6,11 @@ part of ui_library;
 
   Color get primary;
 
+  Color get dashMenuColor;
+
   Color get primaryContainer => const Color(0xff);
 
-  Color get onPrimary ;
+  Color get onPrimary=> const Color(0xff) ;
 
   Color get onPrimaryContainer => const Color(0xff);
 
@@ -140,13 +142,13 @@ class MyColorsLight extends MyColors{
   Color get primary =>const Color(0xFFF2653A);
 
   @override
-  Color get onPrimary => const Color(0xFF9E9E9E);
-
-  @override
-  Color get secondary =>  const  Color(0xFFffffff);
+  Color get secondary =>  const  Color(0xFFFFFFFF);
 
   @override
   Color get scaffoldBackgroundColor => const Color(0xffffffff);
+
+  @override
+  Color get dashMenuColor =>const Color(0xFFE0E0E0);
 }
 
 
@@ -159,36 +161,28 @@ class MyColorsDark extends MyColors{
   Color get primary =>const Color(0xFFF2653A);
 
   @override
-  Color get onPrimary => const Color(0xFF9E9E9E);
-
-  @override
   Color get secondary =>  const  Color(0xFF000000);
 
   @override
   Color get scaffoldBackgroundColor => const Color(0xff000000);
+
+  @override
+  Color get dashMenuColor => const Color(0x40FFFFFF);
 
 }
 
 
 
 class ColorConstants {
-  static const Color onPrimary = Color(0xFF9E9E9E);
-
-  static const Color primary = Color(0xFFFBAD33);
-
-  static const Color secondary = Color(0xFFF2653A);
-
-  static const Color button = Color(0xFFFFFFFF);
-
-  static const Color textField = Color(0xFF000000);
-  static const Color whiteModeGreyColor = Color(0xFF9E9E9E);
-
   static const Color productItemYellowColor = Color(0xFFFFC600);
+  static const Color linearGradientStart = Color(0xFFFBAD33);
+  static const Color linearGradientEnd = Color(0xFFF2653A);
   static const Color walletTransactionRedColor = Color(0xFFFF7474);
   static const Color productItemRedColor = Color(0xFFFF0000);
   static const Color walletTransactionGreenColor = Color(0xFF73FF81);
   static const Color customizeGreenColor = Color(0xFFBCFF00);
   static const Color productItemBlueColor = Color(0xFF5BB0FF);
+  static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color whiteModeLightestGreyColor = Color(0xFFF5F5F5);
   static const Color whiteModeLighterGreyColor = Color(0xFFEEEEEE);
   static const Color whiteModeLightGreyColor = Color(0xFFE0E0E0);
@@ -197,6 +191,7 @@ class ColorConstants {
   static const Color addPaymentCardGreyColor = Color(0xFFD9D9D9);
   static const Color paymentMethodDashColor = Color(0xFFBDBDBD);
   static const Color greyColor = Color(0x99FFFFFF);
+  static const Color whiteModeGreyColor = Color(0xFF9E9E9E);
   static const Color reviewFilterColor = Color(0xFF929292);
   static const Color searchBarGreyColor = Color(0xFF7C7C7C);
   static const Color hintGreyColor = Color(0xFF757575);
@@ -209,5 +204,7 @@ class ColorConstants {
   static const Color backgroundBlurColor = Color(0x801F1F1F);
   static const Color bottomSheetDashColor = Color(0x66000000);
   static const Color bottomSheetGreyTextColor = Color(0x99000000);
+  static const Color blackColor = Color(0xFF000000);
   static const Color whiteBGColor = Color(0xFFF2F2F2);
 }
+
