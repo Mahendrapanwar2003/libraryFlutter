@@ -8,7 +8,7 @@ abstract class MyColors {
 
   Color get primaryContainer => const Color(0xff);
 
-  Color get onPrimary ;
+  Color get onPrimary => const Color(0xff);
 
   Color get dashMenuColor;
 
@@ -43,7 +43,8 @@ abstract class MyColors {
   /* --------------------------Background / ScaffoldBackgroundColor / DialogBackgroundColor Colors Collection--------------------------*/
   Color get backgroundColor => const Color(0xff);
 
-  Color get backGround => const Color(0xffEDF2FE);
+
+  Color get backGround;
 
   Color get onBackGround => const Color(0xff);
 
@@ -120,18 +121,15 @@ abstract class MyColors {
 
   Color get onText;
 
-  Color get caption;
-
-  Color get labelText;
-
-  Color get textField;
-
-  Color get buttonText;
+  Color get textGrayColor;
 
   /* --------------------------bottomBarColor Colors Collection--------------------------*/
 
   Color get bottomBar;
 
+  /* --------------------------NormalColors Colors Collection--------------------------*/
+
+  Color get greyColor;
 }
 
 
@@ -155,31 +153,29 @@ class MyColorsLight extends MyColors{
   Color get scaffoldBackgroundColor => const Color(0xfff2f2f2);
 
   @override
-  Color get buttonText => const Color(0xFFFFFFFF);
-
-  @override
-  Color get labelText => const Color(0xffa0a0a0);
-
-  @override
-  Color get textField => const Color(0xff000000);
+  Color get backGround => const Color(0xffF5F5F5);
 
   @override
   Color get bottomBar => const Color(0xFFFFFFFF);
-
-  @override
-  Color get text => const Color(0xff000000);
-
-  @override
-  Color get onText => const Color(0xFFFFFFFF);
-
-  @override
-  Color get caption => const Color(0xff666666);
 
   @override
   Color get success => const Color(0xff74FF82);
 
   @override
   Color get error => const Color(0xffFF7474);
+
+  @override
+  Color get greyColor => const Color(0x99FFFFFF);
+
+  @override
+  Color get text => const Color(0xffffffff);
+
+  @override
+  Color get textGrayColor => const Color(0xff7C7C7C);
+
+  @override
+  Color get onText => const Color(0xff000000);
+
 
 }
 
@@ -205,36 +201,35 @@ class MyColorsDark extends MyColors{
   Color get scaffoldBackgroundColor => const Color(0xff101010);
 
   @override
-  Color get buttonText => const Color(0xFFFFFFFF);
-
-  @override
-  Color get labelText => const Color(0xffa0a0a0);
-
-  @override
-  Color get textField => const Color(0xffffffff);
+  Color get backGround => const Color(0xff0a0a0a);
 
   @override
   Color get bottomBar => const Color(0xff141414);
-
-  @override
-  Color get text => const Color(0xffffffff);
-
-  @override
-  Color get onText => const Color(0xff141414);
-
-  @override
-  Color get caption => const Color(0xff666666);
 
   @override
   Color get success => const Color(0xff74FF82);
 
   @override
   Color get error => const Color(0xffFF7474);
+
+  @override
+  Color get greyColor => const Color(0x99FFFFFF);
+
+  @override
+  Color get text => const Color(0xff000000);
+
+  @override
+  Color get textGrayColor => const Color(0xff7C7C7C);
+
+  @override
+  Color get onText => const Color(0xffffffff);
+
+
 }
 
 
 
-class ColorConstant {
+/*class ColorConstant {
   static const Color productItemYellowColor = Color(0xFFFFC600);
   static const Color linearGradientStart = Color(0xFFFBAD33);
   static const Color linearGradientEnd = Color(0xFFF2653A);
@@ -308,4 +303,4 @@ class ColorConstants {
   static const Color bottomSheetDashColor = Color(0x66000000);
   static const Color bottomSheetGreyTextColor = Color(0x99000000);
   static const Color whiteBGColor = Color(0xFFF2F2F2);
-}
+}*/
