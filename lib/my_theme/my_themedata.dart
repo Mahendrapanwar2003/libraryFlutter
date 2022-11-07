@@ -9,6 +9,20 @@ class MyThemeData {
       textTheme: MyTextThemeLight().myTextTheme(
         fontFamily: fontFamily,
       ),
+      primaryColor: MyColorsDark().primaryColor,
+      scaffoldBackgroundColor: MyColorsDark().scaffoldBackgroundColor,
+      colorScheme: ColorScheme(
+          primary: MyColorsLight().primary,
+          onPrimary: MyColorsLight().onPrimary,
+          secondary: MyColorsLight().secondary,
+          onSecondary: MyColorsLight().textGrayColor,
+          error: MyColorsLight().error,
+          brightness: Brightness.dark,
+          onError: MyColorsLight().error,
+          background: MyColorsLight().backGround,
+          onBackground: MyColorsLight().backGround,
+          surface: MyColorsLight().text,
+          onSurface: Colors.white),
       textSelectionTheme:
           TextSelectionThemeData(cursorColor: MyColorsLight().primaryColor),
       inputDecorationTheme: InputDecorationTheme(
@@ -48,14 +62,15 @@ class MyThemeData {
               foregroundColor: MyColorsLight().primary)),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-            foregroundColor: MyColorsLight().buttonText,
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
             padding: EdgeInsets.zero),
       ),
-      scaffoldBackgroundColor: MyColorsLight().scaffoldBackgroundColor,
     );
   }
+
+
+
 
   static ThemeData themeDataDark({
     required Orientation? orientation,
@@ -64,19 +79,21 @@ class MyThemeData {
     return ThemeData(
       textTheme: MyTextThemeDark().myTextTheme(fontFamily: fontFamily),
       primaryColor: MyColorsDark().primaryColor,
+      scaffoldBackgroundColor: MyColorsDark().scaffoldBackgroundColor,
       colorScheme: ColorScheme(
           primary: MyColorsDark().primary,
           onPrimary: MyColorsDark().onPrimary,
           secondary: MyColorsDark().secondary,
-          onSecondary: MyColorsDark().onSecondary,
+          onSecondary: MyColorsDark().textGrayColor,
           error: MyColorsDark().error,
           brightness: Brightness.dark,
-          onError: MyColorsDark().onError,
+          onError: MyColorsDark().error,
           background: MyColorsDark().backGround,
-          onBackground: MyColorsDark().onBackGround,
+          onBackground: MyColorsDark().backGround,
           surface: MyColorsDark().text,
-          onSurface: MyColorsDark().onSurface),
-      textSelectionTheme: TextSelectionThemeData(cursorColor: MyColorsDark().primaryColor),
+          onSurface: Colors.white),
+      textSelectionTheme:
+          TextSelectionThemeData(cursorColor: MyColorsDark().primaryColor),
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.only(top: 1),
         constraints: BoxConstraints(maxHeight: 70.px),
@@ -114,7 +131,6 @@ class MyThemeData {
               foregroundColor: MyColorsDark().primary)),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-            foregroundColor: MyColorsDark().buttonText,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25.px),
             ),
@@ -123,7 +139,6 @@ class MyThemeData {
             padding: EdgeInsets.all(3.5.px),
             tapTargetSize: MaterialTapTargetSize.shrinkWrap),
       ),
-      scaffoldBackgroundColor: MyColorsDark().scaffoldBackgroundColor,
     );
   }
 }
