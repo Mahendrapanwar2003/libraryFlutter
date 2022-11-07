@@ -14,20 +14,10 @@ class MyTextThemeStyle {
 
   static TextStyle headline2(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 60.px,
-      fontFamily: fontFamily,
-      fontWeight: FontWeight.w300,
-      inherit: true,
-      color: color,
-      decoration: TextDecoration.none,
-    );
-  }
-
-  //TODO new
-  static TextStyle headline3(Color color, {String? fontFamily}) {
-    return TextStyle(
+      //fontSize: 60.px,
       fontSize: 40.px,
       fontFamily: fontFamily,
+      //fontWeight: FontWeight.w300,
       fontWeight: FontWeight.w700,
       inherit: true,
       color: color,
@@ -35,9 +25,9 @@ class MyTextThemeStyle {
     );
   }
 
-  static TextStyle headline4(Color color, {String? fontFamily}) {
+  static TextStyle headline3(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 34.px,
+      fontSize: 48.px,
       fontFamily: fontFamily,
       fontWeight: FontWeight.w400,
       inherit: true,
@@ -46,10 +36,22 @@ class MyTextThemeStyle {
     );
   }
 
-  //TODO new
+  static TextStyle headline4(Color color, {String? fontFamily}) {
+    return TextStyle(
+      //fontSize: 34.px,
+      fontSize: 12.px,
+      fontFamily: fontFamily,
+      fontWeight: FontWeight.w400,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
+
   static TextStyle headline5(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 24.px,
+      //fontSize: 24.px,
+      fontSize: 16.px,
       fontFamily: fontFamily,
       fontWeight: FontWeight.w600,
       inherit: true,
@@ -60,9 +62,11 @@ class MyTextThemeStyle {
 
   static TextStyle headline6(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 20.px,
+      //fontSize: 20.px,
+      fontSize: 10.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w500,
+      //fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w600,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -73,7 +77,8 @@ class MyTextThemeStyle {
     return TextStyle(
       fontSize: 16.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w500,
+      // fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w600,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -82,19 +87,8 @@ class MyTextThemeStyle {
 
   static TextStyle subtitle2(Color color, {String? fontFamily}) {
     return TextStyle(
+      //fontSize: 12.px,
       fontSize: 14.px,
-      fontFamily: fontFamily,
-      fontWeight: FontWeight.w500,
-      inherit: true,
-      color: color,
-      decoration: TextDecoration.none,
-    );
-  }
-
-  //TODO new
-  static TextStyle bodyText1(Color color, {String? fontFamily}) {
-    return TextStyle(
-      fontSize: 16.px,
       fontFamily: fontFamily,
       fontWeight: FontWeight.w400,
       inherit: true,
@@ -103,7 +97,18 @@ class MyTextThemeStyle {
     );
   }
 
-  //TODO new
+  static TextStyle bodyText1(Color color, {String? fontFamily}) {
+    return TextStyle(
+      fontSize: 16.px,
+      fontFamily: fontFamily,
+      //fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w600,
+      inherit: true,
+      color: color,
+      decoration: TextDecoration.none,
+    );
+  }
+
   static TextStyle bodyText2(Color color, {String? fontFamily}) {
     return TextStyle(
       fontSize: 14.px,
@@ -119,17 +124,17 @@ class MyTextThemeStyle {
     return TextStyle(
       fontSize: 14.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w500,
+      //fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w400,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
     );
   }
 
-
-  //TODO new
   static TextStyle button(Color color, {String? fontFamily}) {
     return TextStyle(
+//      fontSize: 12.px,
       fontSize: 16.px,
       fontFamily: fontFamily,
       fontWeight: FontWeight.w600,
@@ -139,7 +144,6 @@ class MyTextThemeStyle {
     );
   }
 
-  //TODO new
   static TextStyle overline(Color color, {String? fontFamily}) {
     return TextStyle(
       fontSize: 10.px,
@@ -162,11 +166,11 @@ class MyTextThemeStyle {
     );
   }
 
-  //TODO new
   static TextStyle displayMedium(Color color, {String? fontFamily}) {
     return TextStyle(
       fontSize: 45.px,
       fontFamily: fontFamily,
+      //fontWeight: FontWeight.w400,
       fontWeight: FontWeight.w800,
       inherit: true,
       color: color,
@@ -190,7 +194,7 @@ class MyTextThemeStyle {
       fontSize: 32.px,
       fontFamily: fontFamily,
       fontWeight: FontWeight.w500,
-     // fontWeight: FontWeight.w400,
+      // fontWeight: FontWeight.w400,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -230,12 +234,11 @@ class MyTextThemeStyle {
     );
   }
 
-  //TODO new
   static TextStyle labelMedium(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 12.px,
+      fontSize: 10.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w400,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -244,9 +247,9 @@ class MyTextThemeStyle {
 
   static TextStyle labelSmall(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 10.px,
+      fontSize: 11.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w500,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
@@ -257,7 +260,7 @@ class MyTextThemeStyle {
     return TextStyle(
       fontSize: 22.px,
       fontFamily: fontFamily,
-    //  fontWeight: FontWeight.w600,
+      //  fontWeight: FontWeight.w600,
       fontWeight: FontWeight.w400,
       inherit: true,
       color: color,
@@ -265,19 +268,17 @@ class MyTextThemeStyle {
     );
   }
 
-  //TODO new
   static TextStyle titleMedium(Color color, {String? fontFamily}) {
     return TextStyle(
       fontSize: 16.px,
       fontFamily: fontFamily,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w600,
       inherit: true,
       color: color,
       decoration: TextDecoration.none,
     );
   }
 
-  //TODO new
   static TextStyle titleSmall(Color color, {String? fontFamily}) {
     return TextStyle(
       fontSize: 14.px,
@@ -289,10 +290,9 @@ class MyTextThemeStyle {
     );
   }
 
-  //TODO new
   static TextStyle bodyLarge(Color color, {String? fontFamily}) {
     return TextStyle(
-      fontSize: 15.px,
+      fontSize: 16.px,
       fontFamily: fontFamily,
       fontWeight: FontWeight.w400,
       inherit: true,
@@ -312,7 +312,6 @@ class MyTextThemeStyle {
     );
   }
 
-  //TODO new
   static TextStyle bodySmall(Color color, {String? fontFamily}) {
     return TextStyle(
       fontSize: 12.px,
@@ -326,146 +325,148 @@ class MyTextThemeStyle {
 }
 
 class MyTextThemeLight {
-  TextTheme  myTextTheme({String? fontFamily,}) {
-    String semiBold ="${fontFamily}SemiBold";
-    String regular ="${fontFamily}Regular";
-    String light ="${fontFamily}Light";
-    String bold ="${fontFamily}Bold";
-
+  TextTheme myTextTheme({String? fontFamily}) {
+    String semiBold = "${fontFamily}SemiBold";
+    String regular = "${fontFamily}Regular";
+    String light = "${fontFamily}Light";
+    String bold = "${fontFamily}Bold";
     return TextTheme(
-      headline1: MyTextThemeStyle.headlineLarge(
+      headline1: MyTextThemeStyle.displayMedium(
+        MyColorsLight().onText,
+        fontFamily: fontFamily,
+      ),
+      headline2: MyTextThemeStyle.headline2(
+        MyColorsLight().onText,
+        fontFamily: fontFamily,
+      ),
+      headline3: MyTextThemeStyle.headline4(
+        MyColorsLight().onText,
+        fontFamily: fontFamily,
+      ),
+      headline4: MyTextThemeStyle.headline4(
+        MyColorsLight().text,
+        fontFamily: fontFamily,
+      ),
+      overline: MyTextThemeStyle.headline4(
+        MyColorsLight().textGrayColor,
+        fontFamily: fontFamily,
+      ),
+      headline5: MyTextThemeStyle.headline5(
+        MyColorsLight().textGrayColor,
+        fontFamily: fontFamily,
+      ),
+      headline6: MyTextThemeStyle.headline6(
+        MyColorsLight().textGrayColor,
+        fontFamily: fontFamily,
+      ),
+      labelMedium: MyTextThemeStyle.headline6(
         MyColorsLight().text,
         fontFamily: semiBold,
       ),
-      headline2: MyTextThemeStyle.titleLarge(
-        MyColorsLight().text,
-        fontFamily: regular,
-      ),
-        headline3: MyTextThemeStyle.headlineMedium(
-          ColorConstants.textField,
-          fontFamily: semiBold,
-        ),
-        headline4: MyTextThemeStyle.headline6(
-          MyColorsLight().text,
-          fontFamily: semiBold,
-        ),
-
-      headline5: MyTextThemeStyle.headline5(
-        ColorConstants.button,
-        fontFamily: regular,
-      ),
-      headline6: MyTextThemeStyle.bodySmall(
-        ColorConstants.button,
-        fontFamily: regular,
+      headlineLarge: MyTextThemeStyle.headline6(
+        MyColorsLight().onText,
+        fontFamily: fontFamily,
       ),
       subtitle1: MyTextThemeStyle.subtitle1(
-       ColorConstants.button,
-        fontFamily: semiBold,
+        MyColorsLight().onText,
+        fontFamily: fontFamily,
       ),
       subtitle2: MyTextThemeStyle.subtitle2(
-        Colors.black,
-        fontFamily: semiBold,
+        MyColorsLight().onText,
+        fontFamily: fontFamily,
       ),
       bodyText1: MyTextThemeStyle.bodyText1(
-        ColorConstants.button,
-        fontFamily: regular,
+        MyColorsLight().text,
+        fontFamily: fontFamily,
       ),
       bodyText2: MyTextThemeStyle.bodyText2(
-        ColorConstants.button,
-        fontFamily: regular,
+        MyColorsLight().text,
+        fontFamily: fontFamily,
       ),
       button: MyTextThemeStyle.button(
-        MyColorsLight().buttonText,
-        fontFamily: semiBold,
+        MyColorsLight().onText,
+        fontFamily: fontFamily,
       ),
       caption: MyTextThemeStyle.caption(
-        MyColorsLight().caption,
-        fontFamily: semiBold,
-      ),
-      labelMedium: MyTextThemeStyle.labelMedium(
-        MyColorsLight().textField,
-        fontFamily: semiBold,
+        MyColorsLight().textGrayColor,
+        fontFamily: fontFamily,
       ),
 
-      /*
-        overline: MyTextThemeStyle.overline(
-          MyColorsLight().secondary,
-          fontFamily: fontFamily,
-        ),*/
+
     );
   }
 }
 
-class MyTextThemeDark{
-  TextTheme  myTextTheme({String? fontFamily,}) {
-    String semiBold ="${fontFamily}SemiBold";
-    String regular ="${fontFamily}Regular";
-    String light ="${fontFamily}Light";
-    String bold ="${fontFamily}Bold";
-    return TextTheme(
-       headline1: MyTextThemeStyle.headlineLarge(
-        MyColorsDark().text,
-        fontFamily: semiBold,
-      ),
-      headline2: MyTextThemeStyle.titleLarge(
-        MyColorsDark().text,
-        fontFamily: regular,
-      ),
-        headline3: MyTextThemeStyle.headlineMedium(
-          ColorConstants.textField,
-          fontFamily: semiBold,
-        ),
-        headline4: MyTextThemeStyle.headline6(
-          MyColorsDark().text,
-          fontFamily: semiBold,
-        ),
+class MyTextThemeDark {
+  TextTheme myTextTheme({String? fontFamily}) {
+    String semiBold = "${fontFamily}SemiBold";
+    String regular = "${fontFamily}Regular";
+    String light = "${fontFamily}Light";
+    String bold = "${fontFamily}Bold";
 
-      //TODO new
+    return TextTheme(
+      headline1: MyTextThemeStyle.displayMedium(
+        MyColorsDark().onText,
+        fontFamily: fontFamily,
+      ),
+      headline2: MyTextThemeStyle.headline2(
+        MyColorsDark().onText,
+        fontFamily: fontFamily,
+      ),
+      headline3: MyTextThemeStyle.headline4(
+        MyColorsDark().onText,
+        fontFamily: fontFamily,
+      ),
+      headline4: MyTextThemeStyle.headline4(
+        MyColorsDark().text,
+        fontFamily: fontFamily,
+      ),
+      overline: MyTextThemeStyle.headline4(
+        MyColorsLight().textGrayColor,
+        fontFamily: fontFamily,
+      ),
       headline5: MyTextThemeStyle.headline5(
-        ColorConstants.button,
-        fontFamily: regular,
+        MyColorsDark().textGrayColor,
+        fontFamily: fontFamily,
       ),
-      //TODO NEW
-      headline6: MyTextThemeStyle.bodySmall(
-        ColorConstants.button,
-        fontFamily: regular,
+      headline6: MyTextThemeStyle.headline6(
+        MyColorsDark().textGrayColor,
+        fontFamily: fontFamily,
       ),
-      //TODO NEW
-      subtitle1: MyTextThemeStyle.subtitle1(
-        ColorConstants.button,
+      labelMedium: MyTextThemeStyle.headline6(
+        MyColorsDark().text,
         fontFamily: semiBold,
+      ),
+      headlineLarge: MyTextThemeStyle.headline6(
+        MyColorsDark().onText,
+        fontFamily: fontFamily,
+      ),
+      subtitle1: MyTextThemeStyle.subtitle1(
+        MyColorsDark().onText,
+        fontFamily: fontFamily,
       ),
       subtitle2: MyTextThemeStyle.subtitle2(
-        Colors.white,
-        fontFamily: semiBold,
+        MyColorsDark().onText,
+        fontFamily: fontFamily,
       ),
-      //TODO new
       bodyText1: MyTextThemeStyle.bodyText1(
-        ColorConstants.button,
-        fontFamily: regular,
+        MyColorsDark().text,
+        fontFamily: fontFamily,
       ),
-      //TODO NEW
       bodyText2: MyTextThemeStyle.bodyText2(
-        ColorConstants.button,
-        fontFamily: regular,
+        MyColorsDark().text,
+        fontFamily: fontFamily,
       ),
-       button: MyTextThemeStyle.button(
-        MyColorsDark().buttonText,
-        fontFamily: semiBold,
+      button: MyTextThemeStyle.button(
+        MyColorsDark().onText,
+        fontFamily: fontFamily,
       ),
       caption: MyTextThemeStyle.caption(
-        MyColorsDark().caption,
-        fontFamily: semiBold,
+        MyColorsDark().textGrayColor,
+        fontFamily: fontFamily,
       ),
-      labelMedium: MyTextThemeStyle.labelMedium(
-        MyColorsDark().textField,
-        fontFamily: semiBold,
-      ),
-      /*
-        overline: MyTextThemeStyle.overline(
-          MyColorsDark().secondary,
-          fontFamily: fontFamily,
-        ),*/
+
+
     );
   }
 }
