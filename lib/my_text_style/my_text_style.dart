@@ -332,7 +332,7 @@ class MyTextThemeLight {
     String bold = "${fontFamily}Bold";
     return TextTheme(
       headline1: MyTextThemeStyle.displayMedium(
-        MyColorsLight().onText,
+        MyColorsLight().text,
         fontFamily: fontFamily,
       ),
       headline2: MyTextThemeStyle.headline2(
@@ -384,7 +384,7 @@ class MyTextThemeLight {
         fontFamily: fontFamily,
       ),
       button: MyTextThemeStyle.button(
-        MyColorsLight().onText,
+        MyColorsLight().text,
         fontFamily: fontFamily,
       ),
       caption: MyTextThemeStyle.caption(

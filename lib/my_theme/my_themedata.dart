@@ -6,25 +6,23 @@ class MyThemeData {
     String? fontFamily,
   }) {
     return ThemeData(
-      textTheme: MyTextThemeLight().myTextTheme(
-        fontFamily: fontFamily,
-      ),
-      primaryColor: MyColorsDark().primaryColor,
-      scaffoldBackgroundColor: MyColorsDark().scaffoldBackgroundColor,
+      textTheme: MyTextThemeLight().myTextTheme(fontFamily: fontFamily),
+      primaryColor: MyColorsLight().primaryColor,
+      scaffoldBackgroundColor: MyColorsLight().scaffoldBackgroundColor,
       colorScheme: ColorScheme(
           primary: MyColorsLight().primary,
           onPrimary: MyColorsLight().onPrimary,
           secondary: MyColorsLight().secondary,
           onSecondary: MyColorsLight().textGrayColor,
           error: MyColorsLight().error,
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           onError: MyColorsLight().error,
           background: MyColorsLight().backGround,
           onBackground: MyColorsLight().backGround,
           surface: MyColorsLight().text,
-          onSurface: Colors.white),
+          onSurface: MyColorsLight().onText),
       textSelectionTheme:
-          TextSelectionThemeData(cursorColor: MyColorsLight().primaryColor),
+      TextSelectionThemeData(cursorColor: MyColorsLight().primaryColor),
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.only(top: 1),
         constraints: BoxConstraints(maxHeight: 70.px),
@@ -62,15 +60,17 @@ class MyThemeData {
               foregroundColor: MyColorsLight().primary)),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25.px),
+            ),
+            foregroundColor: MyColorsLight().text,
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
-            padding: EdgeInsets.zero),
+            padding: EdgeInsets.all(3.5.px),
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap),
       ),
     );
   }
-
-
-
 
   static ThemeData themeDataDark({
     required Orientation? orientation,
@@ -91,7 +91,7 @@ class MyThemeData {
           background: MyColorsDark().backGround,
           onBackground: MyColorsDark().backGround,
           surface: MyColorsDark().text,
-          onSurface: Colors.white),
+          onSurface: MyColorsDark().onText),
       textSelectionTheme:
           TextSelectionThemeData(cursorColor: MyColorsDark().primaryColor),
       inputDecorationTheme: InputDecorationTheme(
@@ -134,6 +134,7 @@ class MyThemeData {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25.px),
             ),
+            foregroundColor: MyColorsLight().text,
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
             padding: EdgeInsets.all(3.5.px),
