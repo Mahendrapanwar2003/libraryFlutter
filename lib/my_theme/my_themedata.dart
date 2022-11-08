@@ -91,7 +91,7 @@ class MyThemeData {
           background: MyColorsDark().backGround,
           onBackground: MyColorsDark().backGround,
           surface: MyColorsDark().text,
-          onSurface: Colors.white),
+          onSurface: MyColorsDark().onText),
       textSelectionTheme:
           TextSelectionThemeData(cursorColor: MyColorsDark().primaryColor),
       inputDecorationTheme: InputDecorationTheme(
