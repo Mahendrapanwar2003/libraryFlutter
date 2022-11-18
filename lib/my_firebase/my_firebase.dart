@@ -18,14 +18,17 @@ class MyFirebaseSignIn {
       );
 
       try {
-        final UserCredential userCredential =
-            await firebaseAuth.signInWithCredential(authCredential);
+        final UserCredential userCredential = await firebaseAuth.signInWithCredential(authCredential);
+        String? token = await FirebaseMessaging.instance.getToken();
+
         user = userCredential.user;
-        userData["email"] = user?.email;
+        userData["uid"] = user?.uid;
         userData["name"] = user?.displayName;
+        userData["email"] = user?.email;
         userData["profilePicture"] = user?.photoURL;
-        userData["phone"] = user?.phoneNumber;
         userData["refreshToken"] = user?.refreshToken;
+        userData["notificationToken"] =token;
+        userData["phone"] = user?.phoneNumber;
       } on FirebaseAuthException catch (e) {
         if (e.code == 'account-exists-with-different-credential') {
           // handle the error here

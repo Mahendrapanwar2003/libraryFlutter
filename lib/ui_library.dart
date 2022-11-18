@@ -2,6 +2,7 @@ library ui_library;
 
 export 'package:ui_library/ui_library.dart';
 import 'dart:io';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
