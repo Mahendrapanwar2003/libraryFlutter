@@ -59,6 +59,11 @@ class MyFirebaseSignIn {
     return userDataStore;
   }
 
+  static getUserFcmId() async {
+    String? token = await FirebaseMessaging.instance.getToken();
+    return token;
+  }
+
 //TODO Manish
   static String? signIn(String? email, String? password) {
     if ((email != null && email.isNotEmpty) &&
@@ -76,6 +81,7 @@ class MyFirebaseSignIn {
       return "Please Enter Email or Password";
     }
   }
+
 
 //TODO Manish
   static String? signUp(String? email, String? password) {
