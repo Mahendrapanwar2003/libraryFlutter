@@ -1,7 +1,7 @@
 part of ui_library;
 
 class MyFirebaseSignIn {
-  static Future<Map<String, dynamic>> signInWithGoogle() async {
+  static Future<Map<String, dynamic>?> signInWithGoogle() async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       FirebaseAuth firebaseAuth = FirebaseAuth.instance;
       User? user;
@@ -40,10 +40,10 @@ class MyFirebaseSignIn {
         }
         return userData;
       } else {
-        return {};
+        return null;
       }
     } else {
-      return {};
+      return null;
     }
   }
 
@@ -56,13 +56,17 @@ class MyFirebaseSignIn {
       if (result.status == LoginStatus.success) {
         final userData = await FacebookAuth.instance.getUserData();
         userDataStore = userData;
-      }
-      final OAuthCredential facebookAuthCredential =
-          FacebookAuthProvider.credential(result.accessToken!.token);
-      FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
-      return userDataStore;
+        final OAuthCredential facebookAuthCredential =
+        FacebookAuthProvider.credential(result.accessToken!.token);
+        FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+        return userDataStore;
+      }else
+        {
+          return null;
+        }
+
     } else {
-      return {};
+      return null;
     }
   }
 
