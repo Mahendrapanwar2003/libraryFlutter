@@ -40,6 +40,7 @@ dependencies:
   country_state_city_picker: ^1.2.8
   sqflite: ^2.2.0+3
   path: ^1.8.2
+  path_provider: ^2.0.11
 
   ui_library:
     path: ../
