@@ -1,7 +1,8 @@
 part of ui_library;
 
 class MyFirebaseSignIn {
-  static Future<Map<String, dynamic>?> signInWithGoogle() async {
+  static Future<Map<String, dynamic>?> signInWithGoogle(
+      {required BuildContext context}) async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       FirebaseAuth firebaseAuth = FirebaseAuth.instance;
       User? user;
@@ -43,11 +44,13 @@ class MyFirebaseSignIn {
         return null;
       }
     } else {
+      MyCommonMethods.networkConnectionShowSnackBar(context: context);
       return null;
     }
   }
 
-  static Future<Map<String, dynamic>?> signInWithFacebook() async {
+  static Future<Map<String, dynamic>?> signInWithFacebook(
+      {required BuildContext context}) async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       Map<String, dynamic>? userDataStore;
 
@@ -57,25 +60,26 @@ class MyFirebaseSignIn {
         final userData = await FacebookAuth.instance.getUserData();
         userDataStore = userData;
         final OAuthCredential facebookAuthCredential =
-        FacebookAuthProvider.credential(result.accessToken!.token);
+            FacebookAuthProvider.credential(result.accessToken!.token);
         FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
         return userDataStore;
-      }else
-        {
-          return null;
-        }
-
+      } else {
+        return null;
+      }
     } else {
+      MyCommonMethods.networkConnectionShowSnackBar(context: context);
+
       return null;
     }
   }
 
-  static getUserFcmId() async {
+  static Future<String?> getUserFcmId({required BuildContext context}) async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       String? token = await FirebaseMessaging.instance.getToken();
       return token;
     } else {
-      return "";
+      MyCommonMethods.networkConnectionShowSnackBar(context: context);
+      return null;
     }
   }
 
