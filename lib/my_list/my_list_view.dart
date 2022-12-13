@@ -16,6 +16,7 @@ class MyListView extends StatelessWidget {
   final int itemCount;
   final double dividerHeight;
   final Color dividerColor;
+  final bool wantDivider;
 
   const MyListView({
     Key? key,
@@ -34,6 +35,7 @@ class MyListView extends StatelessWidget {
     this.clipBehavior = Clip.hardEdge,
     required this.itemCount,
     this.dividerHeight = 0.0,
+    this.wantDivider=false,
   }) : super(key: key);
 
   @override
@@ -49,7 +51,7 @@ class MyListView extends StatelessWidget {
         clipBehavior: clipBehavior,
         scrollDirection: isVertical ? Axis.vertical : Axis.horizontal,
         separatorBuilder: (c, i) {
-          return isVertical
+          return wantDivider?isVertical
               ? Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: dividerHorizontalPadding,
@@ -70,7 +72,7 @@ class MyListView extends StatelessWidget {
                     color: dividerColor,
 
                   ),
-                );
+                ):SizedBox();
         },
         itemBuilder: (c, i) {
           return listOfData(i);
