@@ -17,7 +17,7 @@ class MyHttp {
         return null;
       }
     } else {
-      MyCommonMethods.networkConnectionShowSnackBar(   context: context);
+      MyCommonMethods.networkConnectionShowSnackBar(context: context);
       return null;
     }
   }

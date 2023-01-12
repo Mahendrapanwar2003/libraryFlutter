@@ -17,6 +17,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:loading_animations/loading_animations.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:switcher/core/switcher_size.dart';
 import 'package:http/http.dart' as http;
 

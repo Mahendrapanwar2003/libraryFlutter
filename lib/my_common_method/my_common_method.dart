@@ -39,6 +39,18 @@ class MyCommonMethods {
     }
   }
 
+  static Future<String?> getString({required String key})
+  async {
+    SharedPreferences sharedPreferences= await SharedPreferences.getInstance();
+    return sharedPreferences.getString(key);
+  }
+
+  static Future<bool> setString({required String key,required String value})
+  async {
+    SharedPreferences sharedPreferences= await SharedPreferences.getInstance();
+    return sharedPreferences.setString(key,value);
+  }
+
   static void networkConnectionShowSnackBar({required BuildContext context}) {
     showSnackBar(message: "Check Your Internet Connection", context: context);
   }
