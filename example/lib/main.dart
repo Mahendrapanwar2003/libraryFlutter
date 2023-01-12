@@ -1,4 +1,5 @@
 import 'package:example/imagepicker.dart';
+import 'package:example/show_image.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      home: ImageVi(),
+      home: ImageShow(),
     );
   }
 }
