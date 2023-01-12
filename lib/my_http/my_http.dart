@@ -84,7 +84,7 @@ class MyHttp {
   }
 
   static Future<http.Response> getMethodForParams(
-      {required Map<String, String> authorization,
+      { Map<String, String>? authorization,
       required Map<String, dynamic> queryParameters,
       required String baseUri,
       required String endPointUri}) async {
