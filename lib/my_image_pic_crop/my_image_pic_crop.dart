@@ -37,7 +37,7 @@ class MyImagePicker {
         if (cropImage != null) {
           return File(cropImage.path);
         } else {
-         // return File(imagePicker.path);
+          // return File(imagePicker.path);
           return null;
         }
       } else {

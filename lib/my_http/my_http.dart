@@ -44,14 +44,14 @@ class MyHttp {
     }
   }
 
-  static Future<http.Response> multipartRequest(
+  static Future<http.Response?> multipartRequest(
       {File? image,
       required String url,
       required String multipartRequestType /* POST or GET */,
       required Map<String, dynamic> bodyParams,
       required String token,
       required String userProfileImageKey}) async {
-    http.Response res;
+    http.Response? res;
     if (image != null) {
       http.MultipartRequest multipartRequest =
           http.MultipartRequest(multipartRequestType, Uri.parse(url));
@@ -63,14 +63,27 @@ class MyHttp {
           image: image, userProfileImageKey: userProfileImageKey));
       http.StreamedResponse response = await multipartRequest.send();
       res = await http.Response.fromStream(response);
-      return res;
+      if(res!=null)
+        {
+          return res;
+        }
+      else{
+        return null;
+      }
     } else {
       res = await http.post(
         Uri.parse(url),
         body: bodyParams,
         headers: {"authorization": token},
       );
-      return res;
+      if(res != null)
+      {
+        return res;
+      }
+      else
+        {
+          return null;
+        }
     }
   }
 
