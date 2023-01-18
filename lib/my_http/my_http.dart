@@ -2,7 +2,9 @@ part of ui_library;
 
 class MyHttp {
   static Future<http.Response?> getMethod(
-      {required String url, Map<String, String>? token,required BuildContext context}) async {
+      {required String url,
+      Map<String, String>? token,
+      required BuildContext context}) async {
     if (kDebugMode) print("CALLING:: $url");
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       try {
@@ -63,11 +65,10 @@ class MyHttp {
           image: image, userProfileImageKey: userProfileImageKey));
       http.StreamedResponse response = await multipartRequest.send();
       res = await http.Response.fromStream(response);
-      if(res!=null)
-        {
-          return res;
-        }
-      else{
+      // ignore: unnecessary_null_comparison
+      if (res != null) {
+        return res;
+      } else {
         return null;
       }
     } else {
@@ -76,14 +77,11 @@ class MyHttp {
         body: bodyParams,
         headers: {"authorization": token},
       );
-      if(res != null)
-      {
+      if (res != null) {
         return res;
+      } else {
+        return null;
       }
-      else
-        {
-          return null;
-        }
     }
   }
 
@@ -97,7 +95,7 @@ class MyHttp {
   }
 
   static Future<http.Response> getMethodForParams(
-      { Map<String, String>? authorization,
+      {Map<String, String>? authorization,
       required Map<String, dynamic> queryParameters,
       required String baseUri,
       required String endPointUri}) async {
