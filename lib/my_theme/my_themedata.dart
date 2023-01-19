@@ -61,7 +61,7 @@ class MyThemeData {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25.px),
+              borderRadius: BorderRadius.circular(5.px),
             ),
             foregroundColor: MyColorsLight().text,
             backgroundColor: Colors.transparent,
@@ -132,7 +132,7 @@ class MyThemeData {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25.px),
+              borderRadius: BorderRadius.circular(5.px),
             ),
             foregroundColor: MyColorsLight().text,
             backgroundColor: Colors.transparent,
