@@ -11,10 +11,12 @@ class _ImageShowState extends State<ImageShow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ElevatedButton(onPressed: ()  async {
-        Map<String,dynamic>? data=await  MyLocation.getCurrentLocation();
-        print("data:::${data}");
-      }, child: const Text("GetLocation"),),
+      body: Center(
+        child: ElevatedButton(onPressed: ()  async {
+          Map<String,dynamic>? data=await  MyLocation.getCurrentLocation(context: context);
+          print("data:::${data}");
+        }, child: Text("GetLocation"),),
+      ),
     );
   }
 

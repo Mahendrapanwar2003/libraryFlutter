@@ -11,7 +11,7 @@ part of ui_library;
 
 */
 class MyLocation {
-  static Future<Map<String, dynamic>?> getCurrentLocation() async {
+  static Future<Map<String, dynamic>?> getCurrentLocation({required BuildContext context}) async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       Map<String, dynamic> addressDataMap = {};
       LocationData? myLocation;
@@ -19,47 +19,75 @@ class MyLocation {
       Location location = Location();
       bool serviceEnabled;
       PermissionStatus permissionGranted;
-
-      print("alltestPossible:::::::1");
       serviceEnabled = await location.serviceEnabled();
       if (!serviceEnabled) {
-        print("alltestPossible:::::::2");
         serviceEnabled = await location.requestService();
         if (!serviceEnabled) {
-          print("alltestPossible:::::::3");
           return null;
         }
       }
-      print("alltestPossible:::::::4");
+
 
       permissionGranted = await location.hasPermission();
-      if (permissionGranted == PermissionStatus.denied) {
-        permissionGranted = await location.requestPermission();
-        if (permissionGranted == PermissionStatus.deniedForever) {
-          print("isWorking");
-          try {            print("datadatadatadatadatadatadat::::::::::::::::::");
+      print("what is status::::::::${permissionGranted}");
 
-          await SystemSettings.app();
-            print("datadatadatadatadatadatadat::::::::::::::::::");
-          } catch (e) {
-            print("datadatadatadatadatadatadat::::::::::::::::::");
+      if (permissionGranted == PermissionStatus.denied)
+        {
+          permissionGranted = await location.requestPermission();
+          if (permissionGranted == PermissionStatus.denied)
+          {
+           return null;
           }
-        }
-        print("datadatadatadatadatadatadat::::::::::::::::::");
+          else if (permissionGranted == PermissionStatus.deniedForever)
+          {
+            await OpenAppsSettings.openAppsSettings(settingsCode: SettingsCode.APP_SETTINGS);
+            permissionGranted = await location.hasPermission();
+            if (permissionGranted == PermissionStatus.denied)
+            {
+              return null;
+            }
+            else if (permissionGranted == PermissionStatus.deniedForever)
+            {
+              return null;
+            }
+            else if (permissionGranted == PermissionStatus.granted)
+            {
+              show();
+            }
+          }
+          else if (permissionGranted == PermissionStatus.granted)
+          {
+            show();
+          }
 
-        if (permissionGranted != PermissionStatus.granted) {
-          return null;
         }
-      }
-      print("alltestPossible:::::::7");
+      else if (permissionGranted == PermissionStatus.deniedForever)
+        {
+          await OpenAppsSettings.openAppsSettings(settingsCode: SettingsCode.APP_SETTINGS);
+          permissionGranted = await location.hasPermission();
+          if (permissionGranted == PermissionStatus.denied)
+          {
+            return null;
+          }
+          else if (permissionGranted == PermissionStatus.deniedForever)
+          {
+            return null;
+          }
+          else if (permissionGranted == PermissionStatus.granted)
+          {
+            show();
+          }
 
-      try {
-        print("alltestPossible:::::::8");
+        }
+      else if (permissionGranted == PermissionStatus.granted)
+        {
+          show();
+        }
+
+      print("what is status::::::::${permissionGranted}");
+    /*  try {
         myLocation = await location.getLocation();
       } on PlatformException catch (e) {
-        print("alltestPossible:::::::9");
-        debugPrint("error::::::::::::${e}");
-
         if (e.code == 'PERMISSION_DENIED') {
           error = 'please grant permission';
         }
@@ -68,10 +96,7 @@ class MyLocation {
         }
         return null;
       }
-
-      print("alltestPossible:::::::10");
       if (myLocation.latitude != null && myLocation.longitude != null) {
-        print("alltestPossible:::::::11");
         final coordinates =
             Coordinates(myLocation.latitude, myLocation.longitude);
         final LocatitonGeocoder geocoder =
@@ -83,12 +108,13 @@ class MyLocation {
 
           addressDataMap = {
             MyAddressKeyConstant.countryCode: addressData.countryCode ?? "",
-            /*IN*/
+            *//*IN*//*
             MyAddressKeyConstant.countryName: addressData.countryName ?? "",
             MyAddressKeyConstant.state: addressData.adminArea ?? "",
             MyAddressKeyConstant.subState: addressData.subAdminArea ?? "",
             MyAddressKeyConstant.addressDetail: addressData.addressLine ?? "",
-            MyAddressKeyConstant.subAddressDetail: addressData.featureName ?? "",
+            MyAddressKeyConstant.subAddressDetail:
+                addressData.featureName ?? "",
             MyAddressKeyConstant.city: addressData.locality ?? "",
             MyAddressKeyConstant.area: addressData.subLocality ?? "",
             MyAddressKeyConstant.pinCode: addressData.postalCode ?? "",
@@ -101,13 +127,16 @@ class MyLocation {
         }
       } else {
         return null;
-      }
-    } else {
-      return null;
+      }*/
     }
 
-    return null;
+    else {
+      MyCommonMethods.networkConnectionShowSnackBar(context: context);
+      return null;
+    }
   }
+
+  static void show() {}
 }
 
 class MyAddressKeyConstant {

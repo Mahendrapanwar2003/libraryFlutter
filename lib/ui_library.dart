@@ -22,6 +22,8 @@ import 'package:loading_animations/loading_animations.dart';
 import 'package:location/location.dart';
 import 'package:location_geocoder/location_geocoder.dart';
 import 'package:lottie/lottie.dart';
+import 'package:open_apps_settings/open_apps_settings.dart';
+import 'package:open_apps_settings/settings_enum.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:switcher/core/switcher_size.dart';
 import 'package:http/http.dart' as http;
