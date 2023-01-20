@@ -1,6 +1,9 @@
 part of ui_library;
 
 class MyCommonMethods {
+
+  static String apiKey=" AIzaSyA3JjnDKRhyeLmqrgOAy7j3hDexhpvSEgk";
+
   static secureFromScreenShot() async {
     await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
   }
