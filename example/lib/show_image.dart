@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_library/ui_library.dart';
 class ImageShow extends StatefulWidget {
   ImageShow({Key? key}) : super(key: key);
   String url="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png";
@@ -10,22 +11,10 @@ class _ImageShowState extends State<ImageShow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Listener(
-        onPointerDown: (event)  {
-          print("nvdnsknkjbdkjfbvkbfdjkbvkjbfjk::::::::::1::::::${event}");
-          showDialog(context: context, builder: (context) =>myDialog(url: widget.url));
-        },
-        onPointerUp: (event)  {
-          print("nvdnsknkjbdkjfbvkbfdjkbvkjbfjk::::::::::2::::::${event}");
-          Navigator.pop(context);
-        },
-        child: Center(
-            child: Image.network(
-          widget.url,
-          height: 200,
-          width: 200,
-        )),
-      ),
+      body: ElevatedButton(onPressed: ()  async {
+        Map<String,dynamic>? data=await  MyLocation.getCurrentLocation();
+        print("data:::${data}");
+      }, child: const Text("GetLocation"),),
     );
   }
 

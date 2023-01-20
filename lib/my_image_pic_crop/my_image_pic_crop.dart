@@ -1,5 +1,13 @@
 part of ui_library;
 
+/*
+<activity
+    android:name="com.yalantis.ucrop.UCropActivity"
+    android:screenOrientation="portrait"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+    Add UCropActivity into your AndroidManifest.xml
+ */
 class MyImagePicker {
   String string = "";
 
