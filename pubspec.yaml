@@ -19,7 +19,7 @@ dependencies:
   location: ^4.2.0
   geolocator: ^9.0.2
   location_geocoder: ^1.0.5
-  system_settings: 2.1.0
+  open_apps_settings: ^0.0.4
   responsive_sizer: ^3.1.0
   modal_bottom_sheet: ^2.1.0
   loading_animations: ^2.1.0
@@ -32,7 +32,6 @@ dependencies:
   flutter_windowmanager: ^0.2.0
   internet_connection_checker: ^1.0.0+1
   shared_preferences: ^2.0.15
-  open_apps_settings: ^0.0.4
 
 
 dev_dependencies:

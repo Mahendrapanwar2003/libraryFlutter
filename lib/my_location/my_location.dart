@@ -6,13 +6,12 @@ part of ui_library;
 */
 
 /*
-       in case of Permission Denied Forever
+       in case of Permission Denied   Forever
 	     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
 */
 
 class MyLocation {
-  static Future<Map<String, dynamic>?> getCurrentLocation(
-      {required BuildContext context}) async {
+  static Future<Map<String, dynamic>?> getCurrentLocation({required BuildContext context}) async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       Location location = Location();
       bool serviceEnabled;
@@ -57,8 +56,7 @@ class MyLocation {
     return null;
   }
 
-  static Future<Map<String, dynamic>?> getUserLocationCredential(
-      {required Location location}) async {
+  static Future<Map<String, dynamic>?> getUserLocationCredential({required Location location}) async {
     LocationData? myLocation;
     Map<String, dynamic> addressDataMap = {};
     try {

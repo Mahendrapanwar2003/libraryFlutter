@@ -27,7 +27,6 @@ import 'package:open_apps_settings/settings_enum.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:switcher/core/switcher_size.dart';
 import 'package:http/http.dart' as http;
-import 'package:system_settings/system_settings.dart';
 
 part 'my_list/my_list_view.dart';
 
