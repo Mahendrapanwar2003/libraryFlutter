@@ -83,7 +83,6 @@ class MyFirebaseSignIn {
     }
   }
 
-//TODO Manish
   static String? signIn(String? email, String? password) {
     if ((email != null && email.isNotEmpty) &&
         (password != null && password.isNotEmpty)) {
@@ -102,7 +101,6 @@ class MyFirebaseSignIn {
     return null;
   }
 
-//TODO Manish
   static String? signUp(String? email, String? password) {
     if (email != null && password != null) {
       AuthenticationHelper()
@@ -154,3 +152,67 @@ class AuthenticationHelper {
     await _auth.signOut();
   }
 }
+
+
+class MyFirebaseDynamicLink {
+  static createDynamicLink(
+      {required String baseUrl,
+      required String uriPrefixFirebase,
+      required String packageNameAndroid,
+      String? fallbackUrl,
+      String? appStoreIdIos,
+      String? packageNameIos,
+      String? parameter1,
+      String? parameter2}) async {
+    FirebaseDynamicLinks dynamicLinks = FirebaseDynamicLinks.instance;
+    //baseUrl like ::::http://dev.gofinx.com your baseurl api
+    String link =
+        "$baseUrl?parameter1=${parameter1 ?? 'empty'}&parameter2=${parameter2 ?? 'empty'}";
+    final DynamicLinkParameters parameters = DynamicLinkParameters(
+      //uriPrefixFirebase like ::::::::https://gofinx.page.link firebase dynamicLink
+      uriPrefix: uriPrefixFirebase,
+      link: Uri.parse(link),
+      androidParameters: AndroidParameters(
+        //fallback like playStore https://play.google.com/store/apps/details?id=com.gofinx.app
+        fallbackUrl: Uri.parse(fallbackUrl ?? ''),
+        //packageName like com.gofinx.app   ::::::::::your project package Name android
+        packageName: packageNameAndroid,
+        minimumVersion: 1,
+      ),
+      iosParameters: IOSParameters(
+        //packageName like com.gofinx.app   ::::::::::your project package Name ios
+        bundleId: packageNameIos ?? '',
+        appStoreId: appStoreIdIos,
+        minimumVersion: "1.0.1",
+      ),
+    );
+    return await dynamicLinks.buildShortLink(parameters);
+    //await FlutterSocialContentShare.shareOnWhatsapp(shortLink.previewLink.toString(),shortLink.shortUrl.toString());
+  }
+
+
+  static getDynamicInitialLink() async {
+    final PendingDynamicLinkData? data =
+    await FirebaseDynamicLinks.instance.getInitialLink();
+    final Uri? deepLink = data?.link;
+    if (deepLink != null) {
+        String? parameter1 = deepLink.queryParameters["parameter1"];
+        String? parameter2 = deepLink.queryParameters["parameter2"];
+        if (parameter1 != null &&
+            parameter1.isNotEmpty &&
+            parameter2 != null &&
+            parameter2.isNotEmpty) {
+          if (kDebugMode) {
+            print("parameter1::::$parameter1  parameter2$parameter2");
+          }
+          Map<String,dynamic> map = {"parameter1":parameter1,"parameter2":parameter2};
+          return map;
+        }else{
+          if (kDebugMode) {
+            print("parameter1 && parameter2 Are Empty");
+            return null;
+          }
+        }
+      }
+    }
+  }
