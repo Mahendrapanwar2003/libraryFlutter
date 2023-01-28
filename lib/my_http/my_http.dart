@@ -30,6 +30,7 @@ class MyHttp {
       Map<String, String>? token,
       required BuildContext context}) async {
     if (kDebugMode) print("CALLING:: $url");
+    if (kDebugMode) print("PERAMETER:: ${bodyParams}");
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       try {
         http.Response? response =
@@ -37,6 +38,7 @@ class MyHttp {
         if (kDebugMode) print("CALLING:: ${response.body}");
         return response;
       } catch (e) {
+        if (kDebugMode) print("ERROR:: ${e}");
         MyCommonMethods.serverDownShowSnackBar(context: context);
         return null;
       }

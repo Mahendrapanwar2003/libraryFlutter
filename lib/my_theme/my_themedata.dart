@@ -113,13 +113,12 @@ class MyThemeData {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(25.px),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.zero,
           ),
-          maximumSize: Size(80.w, 50.px),
+          //  maximumSize: Size(80.w, 50.px),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          padding: EdgeInsets.all(3.5.px),
         ),
       ),
       textButtonTheme: TextButtonThemeData(
