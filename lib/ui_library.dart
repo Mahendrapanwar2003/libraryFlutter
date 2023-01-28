@@ -73,3 +73,5 @@ part 'status_code_constant/status_code_constant.dart';
 part 'my_common_method/my_common_method.dart';
 
 part 'my_location/my_location.dart';
+
+part 'my_add_to_cart/my_add_to_cart.dart';
