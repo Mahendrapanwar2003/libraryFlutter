@@ -8,7 +8,7 @@ abstract class MyColors {
 
   Color get primaryContainer => const Color(0xff);
 
-  Color get onPrimary => const Color(0xff);
+  Color get onPrimary ;
 
   Color get dashMenuColor;
 
@@ -72,6 +72,8 @@ abstract class MyColors {
 
   Color get disabledColor => const Color(0xff);
 
+  Color get buttonBlueColor;
+
   Color get indicatorColor => const Color(0xff);
 
 
@@ -130,6 +132,8 @@ abstract class MyColors {
   /* --------------------------NormalColors Colors Collection--------------------------*/
 
   Color get greyColor;
+  
+  Color get backgroundFilterColor;
 }
 
 
@@ -175,6 +179,15 @@ class MyColorsLight extends MyColors{
 
   @override
   Color get onText => const Color(0xff000000);
+
+  @override
+  Color get backgroundFilterColor => const Color(0xff939393);
+
+  @override
+  // TODO: implement buttonBlueColor
+  Color get buttonBlueColor => throw UnimplementedError();
+  
+  
 
 
 }
@@ -222,6 +235,13 @@ class MyColorsDark extends MyColors{
 
   @override
   Color get onText => const Color(0xffffffff);
+
+  @override
+  Color get backgroundFilterColor => const Color(0xff939393);
+
+  @override
+  // TODO: implement buttonBlueColor
+  Color get buttonBlueColor => throw UnimplementedError();
 
 
 }

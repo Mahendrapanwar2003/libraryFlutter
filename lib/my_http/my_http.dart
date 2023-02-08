@@ -30,7 +30,7 @@ class MyHttp {
       Map<String, String>? token,
       required BuildContext context}) async {
     if (kDebugMode) print("CALLING:: $url");
-    if (kDebugMode) print("PERAMETER:: ${bodyParams}");
+    if (kDebugMode) print("BODYPARAMS:: $bodyParams");
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       try {
         http.Response? response =
@@ -38,7 +38,7 @@ class MyHttp {
         if (kDebugMode) print("CALLING:: ${response.body}");
         return response;
       } catch (e) {
-        if (kDebugMode) print("ERROR:: ${e}");
+        if (kDebugMode) print("ERROR:: $e");
         MyCommonMethods.serverDownShowSnackBar(context: context);
         return null;
       }
@@ -54,37 +54,63 @@ class MyHttp {
       required String multipartRequestType /* POST or GET */,
       required Map<String, dynamic> bodyParams,
       required String token,
-      required String userProfileImageKey}) async {
+      required String userProfileImageKey,
+      required BuildContext context}) async {
+    if (kDebugMode) print("CALLING:: $url");
+    if (kDebugMode) print("BODYPARAMS:: $bodyParams");
     http.Response? res;
-    if (image != null) {
-      http.MultipartRequest multipartRequest =
-          http.MultipartRequest(multipartRequestType, Uri.parse(url));
-      bodyParams.forEach((key, value) {
-        multipartRequest.fields[key] = value;
-      });
-      multipartRequest.headers['Authorization'] = token;
-      multipartRequest.files.add(getUserProfileImageFile(
-          image: image, userProfileImageKey: userProfileImageKey));
-      http.StreamedResponse response = await multipartRequest.send();
-      res = await http.Response.fromStream(response);
-      // ignore: unnecessary_null_comparison
-      if (res != null) {
-        return res;
-      } else {
-        return null;
-      }
-    } else {
-      res = await http.post(
-        Uri.parse(url),
-        body: bodyParams,
-        headers: {"authorization": token},
-      );
-      if (res != null) {
-        return res;
-      } else {
-        return null;
-      }
+    if(await MyCommonMethods.internetConnectionCheckerMethod())
+      {
+        if (image != null) {
+          try{
+            http.MultipartRequest multipartRequest =
+            http.MultipartRequest(multipartRequestType, Uri.parse(url));
+            bodyParams.forEach((key, value) {
+              multipartRequest.fields[key] = value;
+            });
+            multipartRequest.headers['Authorization'] = token;
+            multipartRequest.files.add(getUserProfileImageFile(
+                image: image, userProfileImageKey: userProfileImageKey));
+            http.StreamedResponse response = await multipartRequest.send();
+            res = await http.Response.fromStream(response);
+          }catch(e){
+            if (kDebugMode) print("ERROR:: $e");
+            MyCommonMethods.serverDownShowSnackBar(context: context);
+            return null;
+          }
+          // ignore: unnecessary_null_comparison
+          if (res != null) {
+            if (kDebugMode) print("CALLING:: ${res.body}");
+            return res;
+          } else {
+            return null;
+          }
+        } else {
+           try
+           {
+             res = await http.post(
+               Uri.parse(url),
+               body: bodyParams,
+               headers: {"authorization": token},
+             );
+           }catch(e){
+             if (kDebugMode) print("ERROR:: $e");
+             MyCommonMethods.serverDownShowSnackBar(context: context);
+             return null;
+           }
+          // ignore: unnecessary_null_comparison
+          if (res != null) {
+            if (kDebugMode) print("CALLING:: ${res.body}");
+            return res;
+          } else {
+            return null;
+          }
+        }
+      }else {
+      MyCommonMethods.networkConnectionShowSnackBar(context: context);
+      return null;
     }
+
   }
 
   static http.MultipartFile getUserProfileImageFile(
@@ -96,15 +122,41 @@ class MyHttp {
     );
   }
 
-  static Future<http.Response> getMethodForParams(
+  static Future<http.Response?> getMethodForParams(
       {Map<String, String>? authorization,
       required Map<String, dynamic> queryParameters,
       required String baseUri,
-      required String endPointUri}) async {
-    Uri uri = Uri.http(baseUri, endPointUri, queryParameters);
-    if (kDebugMode) print("CALLING:: $uri");
-    http.Response response = await http.get(uri, headers: authorization);
-    if (kDebugMode) print("CALLING:: ${response.body}");
-    return response;
+      required String endPointUri,
+      required BuildContext context}) async {
+
+    if(await MyCommonMethods.internetConnectionCheckerMethod())
+      {
+        try{
+          Uri uri = Uri.http(baseUri, endPointUri, queryParameters);
+          if (kDebugMode) print("CALLING:: $uri");
+          http.Response? response = await http.get(uri, headers: authorization);
+          if (kDebugMode) print("CALLING:: ${response.body}");
+          // ignore: unnecessary_null_comparison
+          if(response!=null)
+          {
+            return response;
+          }
+          else
+          {
+            return null;
+          }
+        }catch(e){
+          if (kDebugMode) print("ERROR:: $e");
+          MyCommonMethods.serverDownShowSnackBar(context: context);
+          return null;
+        }
+
+      }
+    else
+      {
+        MyCommonMethods.networkConnectionShowSnackBar(context: context);
+        return null;
+      }
+
   }
 }
