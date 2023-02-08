@@ -6,7 +6,7 @@ class MyThemeData {
     String? fontFamily,
   }) {
     return ThemeData(
-      textTheme: MyTextThemeLight().myTextTheme(fontFamily: fontFamily),
+      textTheme: MyTextThemeLight() .myTextTheme(fontFamily: fontFamily),
       primaryColor: MyColorsLight().primaryColor,
       scaffoldBackgroundColor: MyColorsLight().scaffoldBackgroundColor,
       colorScheme: ColorScheme(
