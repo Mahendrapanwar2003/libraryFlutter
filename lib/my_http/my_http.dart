@@ -159,4 +159,69 @@ class MyHttp {
       }
 
   }
+
+
+  static Future<http.Response?> multipartRequestForSignUp(
+      {
+        required Map<String,File> imageMap,
+        required String url,
+        required String multipartRequestType /* POST or GET */,
+        required Map<String, dynamic> bodyParams,
+        required BuildContext context}) async {
+    if (kDebugMode) print("CALLING:: $url");
+    if (kDebugMode) print("BODYPARAMS:: $bodyParams");
+    http.Response? res;
+    if(await MyCommonMethods.internetConnectionCheckerMethod())
+    {
+      if (imageMap != null) {
+        try{
+          http.MultipartRequest multipartRequest =
+          http.MultipartRequest(multipartRequestType, Uri.parse(url));
+          bodyParams.forEach((key, value) {
+            multipartRequest.fields[key] = value;
+          });
+          imageMap.forEach((key, value) {
+            multipartRequest.files.add(getUserProfileImageFile(
+                image: value, userProfileImageKey: key));
+          });
+          http.StreamedResponse response = await multipartRequest.send();
+          res = await http.Response.fromStream(response);
+        }catch(e){
+          if (kDebugMode) print("ERROR:: $e");
+          MyCommonMethods.serverDownShowSnackBar(context: context);
+          return null;
+        }
+        // ignore: unnecessary_null_comparison
+        if (res != null) {
+          if (kDebugMode) print("CALLING:: ${res.body}");
+          return res;
+        } else {
+          return null;
+        }
+      } else {
+        try
+        {
+          res = await http.post(
+            Uri.parse(url),
+            body: bodyParams,
+          );
+        }catch(e){
+          if (kDebugMode) print("ERROR:: $e");
+          MyCommonMethods.serverDownShowSnackBar(context: context);
+          return null;
+        }
+        // ignore: unnecessary_null_comparison
+        if (res != null) {
+          if (kDebugMode) print("CALLING:: ${res.body}");
+          return res;
+        } else {
+          return null;
+        }
+      }
+    }else {
+      MyCommonMethods.networkConnectionShowSnackBar(context: context);
+      return null;
+    }
+
+  }
 }
