@@ -56,4 +56,25 @@ class MyImagePicker {
       return null;
     }
   }
+
+
+  static Future<List<XFile>> pickMultipleImages()
+  async {
+    final ImagePicker imagePicker = ImagePicker();
+    List<XFile> imageFileList = [];
+
+    final List<XFile> selectedImages = await
+    imagePicker.pickMultiImage()??[];
+    if (selectedImages.isNotEmpty) {
+      imageFileList.addAll(selectedImages);
+      if(kDebugMode) {
+        print("Selected Image List Length:${imageFileList.length}");
+      }
+      return imageFileList;
+    }
+    else
+      {
+        return [];
+      }
+  }
 }
