@@ -159,4 +159,29 @@ class MyHttp {
       }
 
   }
+
+
+  static uploadMultipleImages()
+  {
+
+  }
+
+  Future<void> uploadMultipleImage(List<XFile> imageList,String requestType,String url, String token,String imageListKey,) async {
+   http.Response? response;
+    if (imageList.isNotEmpty) {
+      for (int i = 0; i < imageList.length; i++) {
+        http.MultipartRequest multipartRequest =http.MultipartRequest('POST', Uri.parse(url));
+        multipartRequest.headers['Authorization'] = token;
+        multipartRequest.files.add(http.MultipartFile.fromBytes(
+            imageListKey,
+            File(imageList[i].path).readAsBytesSync(),
+            filename: imageList[i].path.split("/").last
+        ));
+        http.StreamedResponse streamedResponse = await multipartRequest.send();
+         response = await http.Response.fromStream(streamedResponse);
+        print(imageList[i].path);
+      }
+
+    }
+  }
 }
