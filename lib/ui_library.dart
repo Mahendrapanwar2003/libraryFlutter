@@ -51,12 +51,6 @@ part 'my_responsive_sizer/src/widget.dart';
 
 part 'my_firebase/my_firebase.dart';
 
-part 'my_colors/my_colors.dart';
-
-part 'my_text_style/my_text_style.dart';
-
-part 'my_theme/my_themedata.dart';
-
 part 'my_animations/my_animated_toast.dart';
 
 part 'my_button/my_switch_button.dart';
