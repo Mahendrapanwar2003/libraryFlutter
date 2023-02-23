@@ -10,7 +10,10 @@ part of ui_library;
  */
 class MyImagePicker {
   String string = "";
-
+  static List<File> convertXFilesToFiles({required List<XFile> xFiles}) {
+    List<File> files = xFiles.map((xFile) => File(xFile.path)).toList();
+    return files;
+  }
   static Future<File?> pickImage({
     bool pickImageFromGallery = false,
     bool wantCropper = false,
