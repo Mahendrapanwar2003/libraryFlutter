@@ -1,10 +1,9 @@
 part of ui_library;
 
 class MyHttp {
-  static Future<http.Response?> getMethod(
-      {required String url,
-      Map<String, String>? token,
-      required BuildContext context}) async {
+  static Future<http.Response?> getMethod({required String url,
+    Map<String, String>? token,
+    required BuildContext context}) async {
     if (kDebugMode) print("CALLING:: $url");
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       try {
@@ -24,17 +23,16 @@ class MyHttp {
     }
   }
 
-  static Future<http.Response?> postMethod(
-      {required String url,
-      required Map<String, dynamic> bodyParams,
-      Map<String, String>? token,
-      required BuildContext context}) async {
+  static Future<http.Response?> postMethod({required String url,
+    required Map<String, dynamic> bodyParams,
+    Map<String, String>? token,
+    required BuildContext context}) async {
     if (kDebugMode) print("CALLING:: $url");
     if (kDebugMode) print("BODYPARAMS:: $bodyParams");
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       try {
         http.Response? response =
-            await http.post(Uri.parse(url), body: bodyParams, headers: token);
+        await http.post(Uri.parse(url), body: bodyParams, headers: token);
         if (kDebugMode) print("CALLING:: ${response.body}");
         return response;
       } catch (e) {
@@ -48,14 +46,13 @@ class MyHttp {
     }
   }
 
-  static Future<http.Response?> multipartRequest(
-      {File? image,
-      required String url,
-      required String multipartRequestType /* POST or GET */,
-      required Map<String, dynamic> bodyParams,
-      required String token,
-      required String userProfileImageKey,
-      required BuildContext context}) async {
+  static Future<http.Response?> multipartRequest({File? image,
+    required String url,
+    required String multipartRequestType /* POST or GET */,
+    required Map<String, dynamic> bodyParams,
+    required String token,
+    required String userProfileImageKey,
+    required BuildContext context}) async {
     if (kDebugMode) print("CALLING:: $url");
     if (kDebugMode) print("BODYPARAMS:: $bodyParams");
     http.Response? res;
@@ -63,7 +60,7 @@ class MyHttp {
       if (image != null) {
         try {
           http.MultipartRequest multipartRequest =
-              http.MultipartRequest(multipartRequestType, Uri.parse(url));
+          http.MultipartRequest(multipartRequestType, Uri.parse(url));
           bodyParams.forEach((key, value) {
             multipartRequest.fields[key] = value;
           });
@@ -121,10 +118,10 @@ class MyHttp {
 
   static Future<http.Response?> getMethodForParams(
       {Map<String, String>? authorization,
-      required Map<String, dynamic> queryParameters,
-      required String baseUri,
-      required String endPointUri,
-      required BuildContext context}) async {
+        required Map<String, dynamic> queryParameters,
+        required String baseUri,
+        required String endPointUri,
+        required BuildContext context}) async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       try {
         Uri uri = Uri.http(baseUri, endPointUri, queryParameters);
@@ -150,10 +147,10 @@ class MyHttp {
 
   static Future<http.Response?> multipartRequestForSignUp(
       {required Map<String, File> imageMap,
-      required String url,
-      required String multipartRequestType, // POST or GET
-      required Map<String, dynamic> bodyParams,
-      required BuildContext context}) async {
+        required String url,
+        required String multipartRequestType, // POST or GET
+        required Map<String, dynamic> bodyParams,
+        required BuildContext context}) async {
     if (kDebugMode) print("CALLING:: $url");
     if (kDebugMode) print("BODYPARAMS:: $bodyParams");
     if (kDebugMode) print("imageMap:: $imageMap");
@@ -162,7 +159,7 @@ class MyHttp {
       if (imageMap != null) {
         try {
           http.MultipartRequest multipartRequest =
-              http.MultipartRequest(multipartRequestType, Uri.parse(url));
+          http.MultipartRequest(multipartRequestType, Uri.parse(url));
           bodyParams.forEach((key, value) {
             multipartRequest.fields[key] = value;
             if (kDebugMode) print("value:: $value");
@@ -212,47 +209,55 @@ class MyHttp {
     }
   }
 
-  static Future<http.Response?> uploadMultipleImagesWithBody(
-      {required List<File> images,
-      required String uri,
-      required String imageKey,
-      required String multipartRequestType, // POST or GET
-      required Map<String, dynamic> bodyParams,
-      required String token,
-      required BuildContext context}) async {
+  static Future<http.Response?> uploadMultipleImagesWithBody({
+    required List<File> images,
+    Map<String, File>? imageMap,
+    required String uri,
+    String? token,
+    required String imageKey,
+    required String multipartRequestType, // POST or GET
+    required Map<String, dynamic> bodyParams,
+    required BuildContext context}) async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
-      try {
-        http.Response res;
-        var request = http.MultipartRequest(
-            multipartRequestType, Uri.parse(uri));
-        request.headers.addAll({'Content-Type': 'multipart/form-data'});
-        if (kDebugMode) print("CALLING:: $uri");
-        for (int i = 0; i < images.length; i++) {
-          var stream = http.ByteStream(images[i].openRead());
-          var length = await images[i].length();
-          var multipartFile = http.MultipartFile(imageKey, stream, length,
-              filename: images[i].path);
-          request.files.add(multipartFile);
+      if(imageMap !=null)
+        {
+          try {
+            http.Response res;
+            var request = http.MultipartRequest(
+                multipartRequestType, Uri.parse(uri));
+            request.headers.addAll({'Content-Type': 'multipart/form-data'});
+            if (kDebugMode) print("CALLING:: $uri");
+            imageMap.forEach((key, value) {
+              request.files.add(getUserProfileImageFile(
+                  image: value, userProfileImageKey: key));
+            });
+            for (int i = 0; i < images.length; i++) {
+              var stream = http.ByteStream(images[i].openRead());
+              var length = await images[i].length();
+              var multipartFile = http.MultipartFile(imageKey, stream, length,
+                  filename: images[i].path);
+              request.files.add(multipartFile);
+            }
+            bodyParams.forEach((key, value) {
+              request.fields[key] = value;
+            });
+            request.headers['Authorization'] = token ?? '';
+            var response = await request.send();
+            res = await http.Response.fromStream(response);
+            if (kDebugMode) print("res.body:: ${res.body}");
+            // ignore: unnecessary_null_comparison
+            if (res != null) {
+              return res;
+            } else {
+              return null;
+            }
+          } catch (e) {
+            if (kDebugMode) print("ERROR:: $e");
+            MyCommonMethods.serverDownShowSnackBar(context: context);
+            return null;
+          }
         }
-        bodyParams.forEach((key, value) {
-          request.fields[key] = value;
-        });
-        request.headers['Authorization'] = token;
-        var response = await request.send();
-        res = await http.Response.fromStream(response);
-        if (kDebugMode) print("res.body:: ${res.body}");
-        // ignore: unnecessary_null_comparison
-        if (res != null) {
-          return res;
-        } else {
-          return null;
-        }
-      }catch (e) {
-        if (kDebugMode) print("ERROR:: $e");
-        MyCommonMethods.serverDownShowSnackBar(context: context);
-        return null;
-      }
-    }else {
+    } else {
       MyCommonMethods.networkConnectionShowSnackBar(context: context);
       return null;
     }
