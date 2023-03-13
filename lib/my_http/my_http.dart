@@ -262,6 +262,32 @@ class MyHttp {
       return null;
     }
   }
+
+  static Future<http.Response?> deleteMethod({required String url,
+      required Map<String, dynamic> bodyParams,
+      Map<String, String>? token,
+      required BuildContext context})
+  async {
+    if (kDebugMode) print("CALLING:: $url");
+    if (kDebugMode) print("BODYPARAMS:: $bodyParams");
+    if (await MyCommonMethods.internetConnectionCheckerMethod()) {
+  try {
+  http.Response? response =
+  await http.delete(Uri.parse(url), body: bodyParams, headers: token);
+  if (kDebugMode) print("CALLING:: ${response.body}");
+  return response;
+  } catch (e) {
+  if (kDebugMode) print("ERROR:: $e");
+  // ignore: use_build_context_synchronously
+  MyCommonMethods.serverDownShowSnackBar(context: context);
+  return null;
+  }
+  } else {
+  // ignore: use_build_context_synchronously
+  MyCommonMethods.networkConnectionShowSnackBar(context: context);
+  return null;
+  }
+  }
 }
 
 /*  static Future<http.Response?> uploadMultipleImage(
