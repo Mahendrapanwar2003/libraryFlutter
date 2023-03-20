@@ -13,6 +13,7 @@ class MyHttp {
           headers: token,
         );
         if (kDebugMode) print("CALLING:: ${response.body}");
+        MyLogger.logger.w("CALLING:: ${response.body}");
         return response;
       } catch (e) {
         MyCommonMethods.serverDownShowSnackBar(context: context);
