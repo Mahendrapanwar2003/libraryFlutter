@@ -91,6 +91,8 @@ class MyLocation {
           MyAddressKeyConstant.subArea: addressData.thoroughfare ?? "",
           MyAddressKeyConstant.latitude: myLocation.latitude ?? "",
           MyAddressKeyConstant.longitude: myLocation.longitude ?? "",
+          MyAddressKeyConstant.myLocation: myLocation ?? "",
+          MyAddressKeyConstant.location: location ?? "",
         };
         return addressDataMap;
       } else {
@@ -115,4 +117,6 @@ class MyAddressKeyConstant {
   static String subArea = "subArea";
   static String latitude = "latitude";
   static String longitude = "longitude";
+  static String myLocation = "myLocation";
+  static String location = "location";
 }
