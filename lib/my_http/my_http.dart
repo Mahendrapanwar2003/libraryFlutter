@@ -107,6 +107,7 @@ class MyHttp {
       }
     } else {
       MyCommonMethods.networkConnectionShowSnackBar(context: context);
+      MyLogger.logger.i("MJGRy8rfgugudgufguydgyudughdsughidhghegug");
       return null;
     }
   }
