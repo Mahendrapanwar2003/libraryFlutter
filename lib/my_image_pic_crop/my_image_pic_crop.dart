@@ -58,7 +58,7 @@ class MyImagePicker {
   }
 
 
-  static Future<List<XFile>> pickMultipleImages()
+    static Future<List<XFile>> pickMultipleImages()
   async {
     final ImagePicker imagePicker = ImagePicker();
     List<XFile> imageFileList = [];
