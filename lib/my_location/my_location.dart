@@ -10,8 +10,18 @@ part of ui_library;
 	     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
 */
 
+//** add this line PROJECT LEVEL BUILD GRADLE allprojects
+
+
+/*          configurations.all {
+          resolutionStrategy {
+                force "com.google.android.gms:play-services-location:21.0.1"
+                             }
+                                }
+*/
 class MyLocation {
-  static Future<Map<String, dynamic>?> getCurrentLocation({required BuildContext context}) async {
+  static Future<Map<String, dynamic>?> getCurrentLocation(
+      {required BuildContext context}) async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
       Location location = Location();
       bool serviceEnabled;
@@ -56,7 +66,8 @@ class MyLocation {
     return null;
   }
 
-  static Future<Map<String, dynamic>?> getUserLocationCredential({required Location location}) async {
+  static Future<Map<String, dynamic>?> getUserLocationCredential(
+      {required Location location}) async {
     LocationData? myLocation;
     Map<String, dynamic> addressDataMap = {};
     try {
@@ -91,6 +102,8 @@ class MyLocation {
           MyAddressKeyConstant.subArea: addressData.thoroughfare ?? "",
           MyAddressKeyConstant.latitude: myLocation.latitude ?? "",
           MyAddressKeyConstant.longitude: myLocation.longitude ?? "",
+          MyAddressKeyConstant.myLocation: myLocation ?? "",
+          MyAddressKeyConstant.location: location ?? "",
         };
         return addressDataMap;
       } else {
@@ -115,4 +128,6 @@ class MyAddressKeyConstant {
   static String subArea = "subArea";
   static String latitude = "latitude";
   static String longitude = "longitude";
+  static String myLocation = "myLocation";
+  static String location = "location";
 }

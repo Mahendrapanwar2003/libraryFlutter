@@ -54,6 +54,19 @@ class MyCommonMethods {
     return sharedPreferences.setString(key,value);
   }
 
+
+  static Future<bool?> getBool({required String key})
+  async {
+    SharedPreferences sharedPreferences= await SharedPreferences.getInstance();
+    return sharedPreferences.getBool(key);
+  }
+
+  static Future<bool> setBool({required String key,required bool value})
+  async {
+    SharedPreferences sharedPreferences= await SharedPreferences.getInstance();
+    return sharedPreferences.setBool(key,value);
+  }
+
   static void networkConnectionShowSnackBar({required BuildContext context}) {
     showSnackBar(message: "Check Your Internet Connection", context: context);
   }
