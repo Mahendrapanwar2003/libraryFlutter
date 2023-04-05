@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
 import 'dart:async';
 import 'package:flutter/foundation.dart';
+import 'package:geocoder2/geocoder2.dart';
 import 'package:geolocator/geolocator.dart' as geolocator;
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'dart:math';
