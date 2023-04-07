@@ -80,12 +80,9 @@ class MyLocation {
     }
 
     if (myLocation.latitude != null && myLocation.longitude != null) {
-      final coordinates =
-          Coordinates(myLocation.latitude, myLocation.longitude);
-      final LocatitonGeocoder geocoder =
-          LocatitonGeocoder(MyCommonMethods.apiKey);
-      List<Address> addresses =
-          await geocoder.findAddressesFromCoordinates(coordinates);
+      final coordinates = Coordinates(myLocation.latitude, myLocation.longitude);
+      final LocatitonGeocoder geocoder = LocatitonGeocoder(MyCommonMethods.apiKey);
+      List<Address> addresses = await geocoder.findAddressesFromCoordinates(coordinates);
       if (addresses.isNotEmpty) {
         Address addressData = addresses.first;
         addressDataMap = {
@@ -113,6 +110,95 @@ class MyLocation {
       return null;
     }
   }
+
+  static Future<GetLatLong ?> getUserLatLong(
+      {required BuildContext context}) async {
+    if (await MyCommonMethods.internetConnectionCheckerMethod()) {
+      Location location = Location();
+      bool serviceEnabled;
+      PermissionStatus permissionGranted;
+      serviceEnabled = await location.serviceEnabled();
+
+      if (!serviceEnabled) {
+        serviceEnabled = await location.requestService();
+        if (!serviceEnabled) {
+          return null;
+        }
+      }
+
+      permissionGranted = await location.hasPermission();
+      print("jajajajaja::::::::::${permissionGranted}");
+
+      if (permissionGranted == PermissionStatus.denied) {
+        permissionGranted = await location.requestPermission();
+          print("jajajajaja::::::::::${permissionGranted}");
+        if (permissionGranted == PermissionStatus.denied) {
+          return null;
+        } else if (permissionGranted == PermissionStatus.deniedForever) {
+          await OpenAppsSettings.openAppsSettings(
+              settingsCode: SettingsCode.APP_SETTINGS);
+          permissionGranted = await location.hasPermission();
+          if (permissionGranted == PermissionStatus.denied) {
+            return null;
+          } else if (permissionGranted == PermissionStatus.deniedForever) {
+            return null;
+          } else if (permissionGranted == PermissionStatus.granted) {
+            return await getLatLong(location: location);
+          }
+        } else if (permissionGranted == PermissionStatus.granted) {
+          return await getLatLong(location: location);
+        }
+      } else if (permissionGranted == PermissionStatus.granted) {
+        return await getLatLong(location: location);
+      }
+    } else {
+      MyCommonMethods.networkConnectionShowSnackBar(context: context);
+      return null;
+    }
+
+    return null;
+  }
+
+
+  static Future<GetLatLong?> getLatLong(
+      {required Location location}) async {
+    LocationData? myLocation;
+    try {
+      myLocation = await location.getLocation();
+    } on PlatformException catch (e) {
+      if (e.code == 'PERMISSION_DENIED') {}
+      if (e.code == 'PERMISSION_DENIED_NEVER_ASK') {}
+
+      return null;
+    }
+
+    if (myLocation.latitude != null && myLocation.longitude != null) {
+
+      GetLatLong getLatLongData=GetLatLong(latitude:myLocation.latitude,longitude: myLocation.longitude );
+
+
+      return getLatLongData;
+    } else {
+      return null;
+    }
+  }
+
+  static Future<GetLatLong?> getLatLongByAddress({required String address})
+  async {
+    if(await MyCommonMethods.internetConnectionCheckerMethod())
+      {
+        GeoData data = await Geocoder2.getDataFromAddress(
+            address: address,
+            googleMapApiKey: MyCommonMethods.apiKey);
+        GetLatLong getLatLong=GetLatLong(latitude: data.latitude,longitude: data.longitude);
+        return getLatLong;
+      }
+    else
+      {
+        return null;
+      }
+
+  }
 }
 
 class MyAddressKeyConstant {
@@ -130,4 +216,17 @@ class MyAddressKeyConstant {
   static String longitude = "longitude";
   static String myLocation = "myLocation";
   static String location = "location";
+}
+
+class GetLatLong{
+   double? latitude;
+   double? longitude;
+
+   GetLatLong({ double? latitude, double? longitude})
+   {
+     this.latitude=latitude;
+     this.longitude=longitude;
+   }
+
+
 }
