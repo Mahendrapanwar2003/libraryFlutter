@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyDatePicker{
   static Future<DateTime?> datePicker(
-      {DateTime? lastDate, DateTime? firstDate,required BuildContext context,required Color lightColorPrimaryColor,required Color darkColorPrimaryColor}) async {
+      {DateTime? lastDate, DateTime? firstDate, DateTime? initialDate,required BuildContext context,required Color lightColorPrimaryColor,required Color darkColorPrimaryColor}) async {
     MaterialColor materialColor = MaterialColor(
       darkColorPrimaryColor.value,
       <int, Color>{
@@ -20,7 +20,7 @@ class MyDatePicker{
     );
     DateTime? pickedDate = await showDatePicker(
       context: context,
-      initialDate: DateTime.now(),
+      initialDate: initialDate ?? DateTime.now(),
       firstDate: firstDate ?? DateTime(2000),
       lastDate: lastDate ?? DateTime.now(),
       builder: (context, child) => Theme(
