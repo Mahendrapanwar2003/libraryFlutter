@@ -106,7 +106,7 @@ class MyHttp {
         }
       }
     } else {
-      MyCommonMethods.networkConnectionShowSnackBar(context: context);
+            MyCommonMethods.networkConnectionShowSnackBar(context: context);
       MyLogger.logger.i("MJGRy8rfgugudgufguydgyudughdsughidhghegug");
       return null;
     }
@@ -133,7 +133,7 @@ class MyHttp {
         if (kDebugMode) print("CALLING:: $uri");
         http.Response? response = await http.get(uri, headers: authorization);
         if (kDebugMode) print("CALLING:: ${response.body}");
-        // ignore: unnecessary_null_comparison
+          // ignore: unnecessary_null_comparison
         if (response != null) {
           return response;
         } else {
@@ -197,6 +197,7 @@ class MyHttp {
           );
         } catch (e) {
           if (kDebugMode) print("ERROR:: $e");
+          // ignore: use_build_context_synchronously
           MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
@@ -209,6 +210,7 @@ class MyHttp {
         }
       }
     } else {
+      // ignore: use_build_context_synchronously
       MyCommonMethods.networkConnectionShowSnackBar(context: context);
       return null;
     }
@@ -224,17 +226,16 @@ class MyHttp {
       required Map<String, dynamic> bodyParams,
       required BuildContext context}) async {
     if (await MyCommonMethods.internetConnectionCheckerMethod()) {
-      if (imageMap != null) {
         try {
           http.Response res;
           var request =
               http.MultipartRequest(multipartRequestType, Uri.parse(uri));
           request.headers.addAll({'Content-Type': 'multipart/form-data'});
           if (kDebugMode) print("CALLING:: $uri");
-          imageMap.forEach((key, value) {
+          /*imageMap.forEach((key, value) {
             request.files.add(getUserProfileImageFile(
                 image: value, userProfileImageKey: key));
-          });
+          });*/
           for (int i = 0; i < images.length; i++) {
             var stream = http.ByteStream(images[i].openRead());
             var length = await images[i].length();
@@ -260,7 +261,7 @@ class MyHttp {
           MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
-      }
+
     } else {
       MyCommonMethods.networkConnectionShowSnackBar(context: context);
       return null;
