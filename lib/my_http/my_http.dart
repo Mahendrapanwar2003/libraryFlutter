@@ -232,10 +232,13 @@ class MyHttp {
               http.MultipartRequest(multipartRequestType, Uri.parse(uri));
           request.headers.addAll({'Content-Type': 'multipart/form-data'});
           if (kDebugMode) print("CALLING:: $uri");
-          /*imageMap.forEach((key, value) {
-            request.files.add(getUserProfileImageFile(
-                image: value, userProfileImageKey: key));
-          });*/
+          if(imageMap!=null)
+            {
+              imageMap.forEach((key, value) {
+                request.files.add(getUserProfileImageFile(
+                    image: value, userProfileImageKey: key));
+              });
+            }
           for (int i = 0; i < images.length; i++) {
             var stream = http.ByteStream(images[i].openRead());
             var length = await images[i].length();
