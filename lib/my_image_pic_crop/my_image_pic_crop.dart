@@ -20,9 +20,16 @@ class MyImagePicker {
     required BuildContext context,
     Color color = Colors.blue,
   }) async {
-    XFile? imagePicker = pickImageFromGallery
+    XFile? imagePicker;
+  try{
+     imagePicker = pickImageFromGallery
         ? await ImagePicker().pickImage(source: ImageSource.gallery)
         : await ImagePicker().pickImage(source: ImageSource.camera);
+  }
+  catch(e)
+    {
+       //handle error
+    }
     if (imagePicker != null) {
       if (wantCropper) {
         CroppedFile? cropImage = await ImageCropper().cropImage(

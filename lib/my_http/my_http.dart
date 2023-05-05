@@ -179,6 +179,7 @@ class MyHttp {
           res = await http.Response.fromStream(response);
         } catch (e) {
           if (kDebugMode) print("ERROR:: $e");
+          // ignore: use_build_context_synchronously
           MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
