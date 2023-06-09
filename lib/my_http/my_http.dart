@@ -16,7 +16,9 @@ class MyHttp {
         MyLogger.logger.w("CALLING:: ${response.body}");
         return response;
       } catch (e) {
-        MyCommonMethods.serverDownShowSnackBar(context: context);
+         if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+        //MyCommonMethods.serverDownShowSnackBar(context: context);
         return null;
       }
     } else {
@@ -40,7 +42,9 @@ class MyHttp {
         return response;
       } catch (e) {
         if (kDebugMode) print("ERROR:: $e");
-        MyCommonMethods.serverDownShowSnackBar(context: context);
+         if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+        //MyCommonMethods.serverDownShowSnackBar(context: context);
         return null;
       }
     } else {
@@ -75,7 +79,9 @@ class MyHttp {
           res = await http.Response.fromStream(response);
         } catch (e) {
           if (kDebugMode) print("ERROR:: $e");
-          MyCommonMethods.serverDownShowSnackBar(context: context);
+           if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+          //MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
         // ignore: unnecessary_null_comparison
@@ -94,7 +100,9 @@ class MyHttp {
           );
         } catch (e) {
           if (kDebugMode) print("ERROR:: $e");
-          MyCommonMethods.serverDownShowSnackBar(context: context);
+           if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+          //MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
         // ignore: unnecessary_null_comparison
@@ -141,7 +149,9 @@ class MyHttp {
         }
       } catch (e) {
         if (kDebugMode) print("ERROR:: $e");
-        MyCommonMethods.serverDownShowSnackBar(context: context);
+         if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+        //MyCommonMethods.serverDownShowSnackBar(context: context);
         return null;
       }
     } else {
@@ -180,7 +190,9 @@ class MyHttp {
         } catch (e) {
           if (kDebugMode) print("ERROR:: $e");
           // ignore: use_build_context_synchronously
-          MyCommonMethods.serverDownShowSnackBar(context: context);
+           if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+          //MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
         // ignore: unnecessary_null_comparison
@@ -199,7 +211,9 @@ class MyHttp {
         } catch (e) {
           if (kDebugMode) print("ERROR:: $e");
           // ignore: use_build_context_synchronously
-          MyCommonMethods.serverDownShowSnackBar(context: context);
+           if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+          //MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
         // ignore: unnecessary_null_comparison
@@ -262,7 +276,9 @@ class MyHttp {
           }
         } catch (e) {
           if (kDebugMode) print("ERROR:: $e");
-          MyCommonMethods.serverDownShowSnackBar(context: context);
+           if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+          //MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
 
@@ -288,7 +304,9 @@ class MyHttp {
       } catch (e) {
         if (kDebugMode) print("ERROR:: $e");
         // ignore: use_build_context_synchronously
-        MyCommonMethods.serverDownShowSnackBar(context: context);
+         if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+        //MyCommonMethods.serverDownShowSnackBar(context: context);
         return null;
       }
     } else {
@@ -403,7 +421,9 @@ class MyHttp {
           res = await http.Response.fromStream(response);
         } catch (e) {
           if (kDebugMode) print("ERROR:: $e");
-          MyCommonMethods.serverDownShowSnackBar(context: context);
+           if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+          //MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
         // ignore: unnecessary_null_comparison
@@ -422,7 +442,9 @@ class MyHttp {
           );
         } catch (e) {
           if (kDebugMode) print("ERROR:: $e");
-          MyCommonMethods.serverDownShowSnackBar(context: context);
+           if (kDebugMode) print("CALLING:: Server Down");
+        MyLogger.logger.e("CALLING:: Server Down");
+          //MyCommonMethods.serverDownShowSnackBar(context: context);
           return null;
         }
         // ignore: unnecessary_null_comparison

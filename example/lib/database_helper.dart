@@ -10,15 +10,14 @@ class DatabaseHelper {
   static final DatabaseHelper databaseHelperInstance =
       DatabaseHelper._privateConstructor();
 
-  DatabaseHelper._privateConstructor();
+    DatabaseHelper._privateConstructor();
 
   factory DatabaseHelper() {
     return databaseHelperInstance;
   }
 
   Future<Database?> openDB() async {
-    print(
-        'path of:::::::${await getDatabasesPath() + DatabaseConst.databaseName}');
+    print('path of:::::::${await getDatabasesPath() + DatabaseConst.databaseName}');
     db = await openDatabase(
         join(await getDatabasesPath(), DatabaseConst.databaseName));
     return db;
