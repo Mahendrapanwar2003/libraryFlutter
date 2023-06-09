@@ -25,7 +25,7 @@ class MyCommonMethods {
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       content: Text(message),
-      margin: EdgeInsets.only(left: 4.w, right: 3.w),
+      margin: EdgeInsets.only(left: 4.w, right: 3.w,bottom: 10.h),
       behavior: SnackBarBehavior.floating,
       duration: duration ?? const Duration(seconds: 2),
     );

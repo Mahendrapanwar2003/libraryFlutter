@@ -38,6 +38,7 @@ class MyFirebaseSignIn {
           }
         } catch (e) {
           // handle the error here
+          MyCommonMethods.showSnackBar(message: "Something want wrong!", context: context);
         }
         return userData;
       } else {
