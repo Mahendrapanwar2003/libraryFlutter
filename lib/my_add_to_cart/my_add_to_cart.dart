@@ -50,7 +50,7 @@ class AddToCartButton extends StatefulWidget {
   /// Create an Add To Cart button.
   const AddToCartButton({
     Key? key,
-    this.duration: const Duration(milliseconds: 3000),
+    this.duration = const Duration(milliseconds: 3000),
     required this.trolley,
     required this.text,
     required this.check,
@@ -58,9 +58,9 @@ class AddToCartButton extends StatefulWidget {
     this.borderRadius,
     this.backgroundColor,
     this.streetLineColor=Colors.white,
-    this.streetLineHeight: 2,
-    this.streetLineDashWidth: 12,
-    this.trolleyLeftMargin: 12,
+    this.streetLineHeight = 2,
+    this.streetLineDashWidth = 12,
+    this.trolleyLeftMargin = 12,
     this.stateId = AddToCartButtonStateId.idle,
   }) : super(key: key);
 
@@ -284,7 +284,7 @@ class _RunningTrolley extends StatefulWidget {
   /// [streetLineHeight] & [streetLineDashWidth] are used to draw the street.
   const _RunningTrolley({
     Key? key,
-    this.stateId: AddToCartButtonStateId.idle,
+    this.stateId = AddToCartButtonStateId.idle,
     required this.streetLineColor,
     required this.trolley,
     required this.duration,
@@ -472,8 +472,8 @@ class _StreetLinePainter extends CustomPainter {
   /// Constructor
   /// [translateFactor] is the animation controller value that controls this.
   _StreetLinePainter({
-    this.dashWidth: 12.0,
-    this.translateFactor: 0.0,
+    this.dashWidth = 12.0,
+    this.translateFactor = 0.0,
     required this.streetLineColor
   });
 
